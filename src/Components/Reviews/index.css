@@ -1,0 +1,24 @@
+.review_form{
+    align-content: center;
+    background-color: white;
+ }
+ 
+ .reviewQ{
+   text-align: left;
+   color: gray;
+ }
+ 
+ .TLDR{
+   border: 1px solid gray;
+   justify-content: center;
+   width: 55px;
+   height: 55px;
+ }
+ 
+ .submitButton{
+   justify-content: center;
+   background-color: blue;
+   border: 1px solid blue;
+   width: 15px;
+   height: 10px;
+ }

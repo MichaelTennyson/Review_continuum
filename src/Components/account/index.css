@@ -1,0 +1,40 @@
+.account{
+    align-content: center;
+    justify-content: flex;
+    border: 1px black;
+    width: 100px;
+    height: 100px;
+}
+
+.accountUsername{
+    text-align:center;
+    justify-content: flex;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.module_reviews_done{
+    align-content: center;
+    justify-content: flex;
+    width: 55px;
+    height: 55px;
+}
+
+.user_modules_completed_names{
+    align-content: center;
+    justify-content: flex;
+    font-size: large;
+}
+
+.module1{
+    align-content: center;
+    font-size: small;
+    color: black;
+}
+
+.module2{
+    align-content: center;
+    font-size: small;
+    color: black;
+}
