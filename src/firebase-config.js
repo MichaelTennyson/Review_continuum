@@ -9,9 +9,9 @@ const firebaseConfig = {
     databaseURL: "https://review-continuum-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "review-continuum",
     storageBucket: "review-continuum.appspot.com",
-    messagingSenderId: "678488961569",
+    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
     appId: process.env.FIREBASE_APP_ID,
-    measurementId: "G-ECZ5GEJXTK"
+    measurementId: process.env.FIREBASE_MEASUREMENT_ID
   };
 
   const app = initializeApp(firebaseConfig);
