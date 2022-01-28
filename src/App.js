@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import Axios from 'axios';
 import './App.css';
-import './index.css';
 
 function App() {
   const [usernameReg, setUsernameReg] = useState('');
@@ -31,25 +30,26 @@ function App() {
 
 
   return (
-    <><div className='App'>
+    <>
+      <div className='App'>
         <div className='registration'>
           <h1>Registration</h1>
-          <label>Username:</label>
-          <input type="text" className='username' onChange={(e) => { setUsernameReg(e.target.value); } }>
+          <label className='Heading'>Username:</label>
+          <input type="text" className='username' placeholder='Username' onChange={(e) => { setUsernameReg(e.target.value); } }>
           </input>
-          <label>Password:</label>
-          <input type="text" className='password' onChange={(e) => { setPasswordReg(e.target.value); } } />
+          <label className='Heading'>Password:</label>
+          <input type="text" className='password' placeholder='password' onChange={(e) => { setPasswordReg(e.target.value); } } />
           <button className='button1' onClick={register}>Register</button>
         </div>
 
-      <div className='login'>
-        <h1>Login</h1>
-        <input type="text" className='loginUsername' placeholder='Username..' onChange={(e) => { setUsername(e.target.value); } } />
-        <input type="password" className='loginPassword' placeholder='Password..' onChange={(e) => { setPassword(e.target.value); } } />
-          <button className='button2' onClick={login}>Login</button> 
+        <div className='login'>
+          <h1>Login</h1>
+          <input type="text" className='loginUsername' placeholder='Username..' onChange={(e) => { setUsername(e.target.value); } } />
+          <input type="password" className='loginPassword' placeholder='Password..' onChange={(e) => { setPassword(e.target.value); } } />
+            <button className='button2' onClick={login}>Login</button> 
+        </div>
+          <h1>{loginStatus}</h1>
       </div>
-        <h1>{loginStatus}</h1>
-    </div>
     </>
   ); 
 }

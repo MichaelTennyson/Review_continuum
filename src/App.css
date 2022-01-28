@@ -1,3 +1,64 @@
 .App{
-  text-align: center;
+  align-content: right;
+  vertical-align:middle;
+  width:100px;
+  height: 100px;
+}
+
+.registration{
+  align-content: right;
+  justify-content: center;
+} 
+
+.username{
+  justify-content: center;
+  align-content: right;
+  border: 3px black;
+  width: 400px;
+  height: 40px;
+  background-color: white;
+}
+
+.password{
+  justify-content: center;
+  align-content: right;
+  border: 3px black;
+  width: 400px;
+  height: 40px;
+  background-color: white;
+}
+
+.button1{
+  background-color: blue;
+  width: 80px;
+  height: 40px;
+}
+
+.button2{
+  background-color: blue;
+  width: 80px;
+  height: 40px;
+}
+
+.loginUsername{
+  align-content: left;
+  border: 3px black;
+  width: 400px;
+  height: 40px;
+  background-color: white;
+}
+
+.loginPassword{
+  justify-content: center;
+  align-content: left;
+  border: 3px black;
+  width: 400px;
+  height: 40px;
+  background-color: white;
+}
+
+.Heading{
+  font-size: larger;
+  font-family: 'Courier New', Courier, monospace;
+  align-self: left;
 }
