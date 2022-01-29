@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Axios from 'axios';
 import './App.css';
+import Header from '.../Components/header/header.js';
+import Footer from '.../Components/footer/footer.js';
 
 function App() {
   const [usernameReg, setUsernameReg] = useState('');
@@ -31,6 +33,7 @@ function App() {
 
   return (
     <>
+      <Header />
       <div className='App'>
         <div className='registration'>
           <h1>Registration</h1>
@@ -50,6 +53,7 @@ function App() {
         </div>
           <h1>{loginStatus}</h1>
       </div>
+      <Footer />
     </>
   ); 
 }
