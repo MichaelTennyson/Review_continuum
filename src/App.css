@@ -1,15 +1,46 @@
 .App{
   align-content: right;
   vertical-align:middle;
+  position: relative;
   width:100px;
   height: 100px;
+  display: flex;
 }
 
 .registration{
-  align-content: right;
+  align-content: left;
   justify-content: center;
-} 
+}
 
+.login{
+  align-content:left;
+}
+
+.name-wrap{
+  align-content:center;
+  justify-content:flex;
+  margin: 5px auto;
+}
+
+.Fname{
+  justify-self: left;
+  width:200px;
+  height: 40px;
+  border: 3px black;
+}
+
+.Sname{
+  justify-self: right;
+  width:200px;
+  height: 40px;
+  border: 3px black;
+}
+
+.user-wrap{
+  align-content:center;
+  justify-content:flex;
+  margin: 5px auto;
+}
 .username{
   justify-content: center;
   align-content: right;
