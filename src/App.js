@@ -15,7 +15,7 @@ function App() {
 
 
   const register = () => {
-    Axios.post('http://localhost3001/register', {FirstName: firstnameReg, SurName: surnameReg,  Username: usernameReg, Password: passwordReg}).then((response) => {
+    Axios.post('http://localhost:3001/register', {FirstName: firstnameReg, SurName: surnameReg,  Username: usernameReg, Password: passwordReg}).then((response) => {
         if(response.data.message){
           setLoginStatus(response.data.message);
         }else{
@@ -25,7 +25,7 @@ function App() {
   };
 
   const login = () => {
-    Axios.post('http://localhost3001/login', {Username: username, Password: password}).then((response) => {
+    Axios.post("http://localhost:3001/login", {Username: username, Password: password}).then((response) => {
         console.log(response.data);
     });
   };
