@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Axios from 'axios';
 import './App.css';
 
+
 function App() {
   const [firstnameReg, setFirstNameReg] = useState('');
   const [surnameReg, setSurNameReg] = useState('');
@@ -15,7 +16,7 @@ function App() {
 
 
   const register = () => {
-    Axios.post('http://localhost:3001/register', {FirstName: firstnameReg, SurName: surnameReg,  Username: usernameReg, Password: passwordReg}).then((response) => {
+    Axios.post('http://localhost:5000/register', {FirstName: firstnameReg, SurName: surnameReg,  Username: usernameReg, Password: passwordReg}).then((response) => {
         if(response.data.message){
           setLoginStatus(response.data.message);
         }else{
@@ -25,7 +26,7 @@ function App() {
   };
 
   const login = () => {
-    Axios.post("http://localhost:3001/login", {Username: username, Password: password}).then((response) => {
+    Axios.post("http://localhost:5000/login", {Username: username, Password: password}).then((response) => {
         console.log(response.data);
     });
   };
@@ -33,6 +34,7 @@ function App() {
 
   return (
     <>
+      <title>Review Continuum</title>
       <div className='App'>
         <div className='registration'>
           <h1>Registration</h1>
@@ -49,7 +51,7 @@ function App() {
             <input type="text" className='username' placeholder='Username eg. C12345678' onChange={(e) => { setUsernameReg(e.target.value); } }>
             </input>
             <label className='Heading'>Password:</label>
-            <input type="text" className='password' placeholder='password e.g. dhVP109..' onChange={(e) => { setPasswordReg(e.target.value); } } />
+            <input type="password" className='password' placeholder='password e.g. dhVP109..' onChange={(e) => { setPasswordReg(e.target.value); } } />
             <button className='button1' onClick={register}>Register</button>
           </div>
           
