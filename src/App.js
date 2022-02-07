@@ -34,7 +34,7 @@ function App() {
 
   return (
     <>
-      <title>Review Continuum</title>
+      <h1>Review Continuum</h1>
       <div className='App'>
         <div className='registration'>
           <h1>Registration</h1>
