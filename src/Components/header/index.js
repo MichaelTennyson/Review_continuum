@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import {
@@ -10,8 +11,8 @@ import {
     SearchPage,
   } from "./Components";
   
-function HeaderLinks(){
-  return(
+
+  ReactDOM.render(
     <Router>
       <Header />
       <Routes>
@@ -24,7 +25,7 @@ function HeaderLinks(){
     </Router>
   );
 
-}
+
 
 export default HeaderLinks;
   
