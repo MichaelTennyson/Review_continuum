@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
+import {  useNavigate } from 'react-router-dom';
 import Axios from 'axios';
 import './App.css';
-
 
 function App() {
   const [firstnameReg, setFirstNameReg] = useState('');
@@ -13,6 +13,8 @@ function App() {
   const [password, setPassword] = useState('');
 
   const [loginStatus, setLoginStatus] = useState("");
+
+  let navigate = useNavigate();
 
 
   const register = () => {
@@ -62,6 +64,9 @@ function App() {
           <input type="text" className='loginUsername' placeholder='Username..' onChange={(e) => { setUsername(e.target.value); } } />
           <input type="password" className='loginPassword' placeholder='Password..' onChange={(e) => { setPassword(e.target.value); } } />
             <button className='button2' onClick={login}>Login</button> 
+            <button className='TestButton' onClick={() => {
+              navigate("/HomePage")
+            }}> TEST BUTTON</button>
         </div>
           <h1>{loginStatus}</h1>
       </div>

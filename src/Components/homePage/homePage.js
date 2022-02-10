@@ -4,7 +4,7 @@ import Footer from '../footer/footer.js';
 import './index.css';
 
 
-function HomePage(){ 
+function HomePage({ authorized }){ 
     return(
         <>
         <Header />
