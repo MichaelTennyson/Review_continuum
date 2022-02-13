@@ -1,6 +1,6 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp } from "firebase/compat/app";
 import { getAnalytics } from "firebase/analytics";
-import {getFirestore} from '@firebase/firestore';
+import {getFirestore} from '@firebase/compat/firestore';
 require("dotenv").config();
 
 const firebaseConfig = {
