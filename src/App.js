@@ -2,7 +2,7 @@ import React ,{useState, useEffect} from 'react';
 import {  useNavigate } from 'react-router-dom';
 import './App.css';
 import {db} from './firebase-config';
-import { collection, addDoc, getDocs } from "firebase/firestore"; 
+import { collection, doc,addDoc, getDocs } from "firebase/firestore"; 
 
 //imported components
 import Header from '.../Components/header/header.js';
