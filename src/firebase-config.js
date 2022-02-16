@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/compat/app";
 import { getAnalytics } from "firebase/analytics";
-import {getFirestore} from '@firebase/compat/firestore';
+import { getFirestore } from "firebase/firestore";
 import firebase from 'firebase/app'
 import 'firebase/storage';
 import 'firebase/firestore';
