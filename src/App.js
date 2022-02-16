@@ -2,8 +2,15 @@ import React ,{useState, useEffect} from 'react';
 import {  useNavigate } from 'react-router-dom';
 import './App.css';
 import {db} from './firebase-config';
-import { collection, getDocs, addDoc} from "firebase/firestore";
-
+import { collection, addDoc, getDocs } from "firebase/firestore"; 
+import Header from '.../Components/header/header.js';
+import Footer from '.../Components/footer/footer.js';
+import Account from '.../Components/account/account.js';
+import Comment from '.../Components/footer/footer.js';
+import HomePage from '.../Components/homePage/homePage.js';
+import Logout from '.../Components/logout/logout.js';
+import ModuleReviewForm from '.../Components/Reviews/ModuleReviewForm.js';
+import SearchPage from '.../Components/searchPage/searchPage.js';
 function App() {
   const [newFirstName, setFirstName] = useState("");
   const [newSurName, setSurName] = useState("");
