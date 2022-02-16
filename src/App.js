@@ -17,6 +17,10 @@ const createUser = async () => {
   await addDoc(usersCollectionRef, {name: newFirstName, surname: newSurName, username: newUserName, password: newPassword});
 };
 
+const updateUser = async (id, name) =>{
+
+}
+
   useEffect(() => {
 
     const getUsers = async () =>{
@@ -29,7 +33,7 @@ const createUser = async () => {
   let navigate = useNavigate();
 
 
-
+  //onchange events hook the input made by the user and passes it to the use state
   return (
    <div className="App">
      <input className='nameUserInput' placeholder="firstname" onChange={(event) => {
@@ -46,6 +50,7 @@ const createUser = async () => {
 
      <button onClick={createUser} className='Createuserbutton'>register</button>
         {Users.map((user) => {
+            //the following code displays the user details from the firebase dataabase
             return(
               <div>
                   {""}
