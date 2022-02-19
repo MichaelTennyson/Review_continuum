@@ -1,8 +1,8 @@
-import { initializeApp } from "firebase/compat/app";
-import { getAnalytics } from "firebase/analytics";
-import { getFirestore } from "firebase/compat/firestore";
-import firebase from 'firebase/compat/app'
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import {getAuth} from "firebase/auth";
 import 'firebase/storage';
+import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
 require("dotenv").config();
 
@@ -18,6 +18,5 @@ const firebaseConfig = {
   };
 
   const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-
-  export const db = getFirestore(app)
+  export const db = getFirestore(app);
+  export const auth = getAuth(app);

@@ -8,7 +8,7 @@
 }
 
 .registration{
-  align-content: left;
+  align-content: center;
   justify-content: center;
 }
 
@@ -22,22 +22,13 @@
   margin: 5px auto;
 }
 
-.Fname{
+.nameUserInput{
   justify-self: left;
-  width: 60%;
+  width: 300px;
+  height: 30px;
   padding: 15px;
   margin: 5px 0 22px 0;
   margin-top: 20;
-  display: inline-block;
-  border: 3px black;
-}
-
-.Sname{
-  justify-self: right;
-  width: 60%;
-  padding: 15px;
-  margin-top: 20;
-  margin: 5px 0 22px 0;
   display: inline-block;
   border: 3px black;
 }
@@ -47,43 +38,14 @@
   justify-content:flex;
   margin: 5px auto;
 }
-.username{
-  justify-content: center;
-  align-content: right;
-  border: 3px black;
-  width: 300px;
-  padding: 15px;
-  margin-top: 20;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  height: 40px;
-  background-color: white;
-}
 
-.password{
-  justify-content: center;
-  align-content: right;
-  border: 3px black;
-  width: 300px;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  margin-top: 20;
-  display: inline-block;
-  height: 40px;
-  background-color: white;
-}
-
-.button1{
+.Createuserbutton{
   background-color: blue;
-  width: 80px;
-  height: 40px;
+  width: 100px;
+  height: 50px;
 }
 
-.button2{
-  background-color: blue;
-  width: 80px;
-  height: 40px;
-}
+
 
 .loginUsername{
   align-content: left;
