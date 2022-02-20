@@ -1,104 +1,94 @@
 import React ,{useState, useEffect} from 'react';
 import './App.css';
-import {db, auth} from './firebase-config';
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
-} from "firebase/auth";
+import { Redirect } from "react-router-dom";
+import { Form, Button, Card, Alert } from "react-bootstrap";
+import {db} from './firebase-config';
+
+import { collection, addDoc, getDocs } from "firebase/firestore"; 
+
+//use states that pass data to firestore database
+  const [newFirstName, setFirstName] = useState("");
+  const [newSurName, setSurName] = useState("");
+  const [newUserName, setUserName] = useState("");
+  const [newPassword, setPassword] = useState("");
+  const [newEmail, setEmail] = useState("");
+  const [Users, setUsers] = useState([]);
+  const usersCollectionRef = collection(db, "Users");
+
+  // function to pass user details 
+  const createUser = async () => {
+    await addDoc(usersCollectionRef, {name: newFirstName, surname: newSurName, username: newUserName, password: newPassword, email: newEmail});
+  };
+
+  useEffect(() => {
+
+    const getUsers = async () =>{
+        const data = await getDocs(usersCollectionRef);
+        setUsers(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
+    };
+    getUsers();
+  }, []);
 
 
 function App() {
-  //use states for authentication
-  const [registerEmail, setRegisterEmail] = useState("");
-  const [registerPassword, setRegisterPassword] = useState("");
-  const [loginEmail, setLoginEmail] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
-
-  const [user, setUser] = useState({});
-
-  
-
-  //asynchrnois functions to pass data
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
-
-  const register = async () => {
-    try {
-      const user = await createUserWithEmailAndPassword(
-        auth,
-        registerEmail,
-        registerPassword
-      );
-      console.log(user);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
-  const login = async () => {
-    try {
-      const user = await signInWithEmailAndPassword(
-        auth,
-        loginEmail,
-        loginPassword
-      );
-      console.log(user);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
-  const logout = async () => {
-    await signOut(auth);
-  };
-
+ 
   //onchange events hook the input made by the user and passes it to the use state
   return (
-    <div className="App">
-      <div className='registration'>
-        <h3> Register User </h3>
-        <input
-          className='nameUserInput'
-          placeholder="Email..."
-          onChange={(event) => {
-            setRegisterEmail(event.target.value);
-          } } />
-        <input
-          className='nameUserInput'
-          placeholder="Password..."
-          onChange={(event) => {
-            setRegisterPassword(event.target.value);
-          } } />
+    <Card>
+      <Card.Body>
+        <Form className="App">
+          <div className='registration'>
+              <h1>Registration</h1>
+              <input className='nameUserInput' placeholder="firstname" onChange={(event) => {
+                setFirstName(event.target.value)}}/>
 
-        <button onClick={register}> Create User</button>
-      </div>
-      
-      <div className='login'>
-          <h3> Login </h3>
-          <input
-            className='nameUserInput'
-            placeholder="Email..."
-            onChange={(event) => {
-              setLoginEmail(event.target.value);
-            } } />
-          <input
-            className='nameUserInput'
-            placeholder="Password..."
-            onChange={(event) => {
-              setLoginPassword(event.target.value);
-            } } />
+              <input className='nameUserInput' placeholder="surname" onChange={(event) => {
+                setSurName(event.target.value)}}/>
 
-          <button onClick={login}> Login</button>
-      </div>
-        
-        <h4> User Logged In: </h4>
-        {user?.email}
+              <input className='nameUserInput' placeholder="username" onChange={(event) => {
+                setUserName(event.target.value)}}/>
 
-        <button onClick={logout}> Sign Out </button>     
-    </div>
+              <input className='nameUserInput' placeholder="email" onChange={(event) => {
+                setEmail(event.target.value)}}/>
+
+
+              <input type="password" className='nameUserInput' placeholder="password" onChange={(event) => {
+                setPassword(event.target.value)}}/>
+
+              <Button onClick={createUser} className='Createuserbutton'>register</Button>
+            </div>
+              
+          
+            <div className="login">
+              <h1>Login</h1>
+              <input className='nameUserInput' placeholder="username" onChange={(event) => {
+                setUserName(event.target.value)}}/>
+
+              <input type="password" className='nameUserInput' placeholder="password" onChange={(event) => {
+                setPassword(event.target.value)}}/>
+              <Button onClick={createUser} className='Createuserbutton'>Login</Button>
+              <Redirect to='./Components/homePage' />
+            </div> 
+
+
+          {Users.map((Users) => {
+                    //the following code displays the user details from the firebase dataabase
+                    return(
+                      <div>
+                          {""}
+                          <p> firstname:{Users.firstname}</p>
+                          <p> surname:{Users.surname}</p> 
+                          <p>username:{Users.username}</p> 
+                          <p>Email:{Users.Email}</p> 
+                          <p> password: {Users.password}</p> 
+                      </div>
+                    ); 
+                })}
+        </Form>
+      </Card.Body>  
+    </Card>
+  
+    
   );
 
 }
