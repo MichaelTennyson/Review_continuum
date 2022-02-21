@@ -3,6 +3,7 @@ import './App.css';
 import { Link  } from "react-router-dom";
 import { Form, Button, Card} from "react-bootstrap";
 import {db} from './firebase-config';
+import firebaseConfig from './firebase-config';
 
 import { collection, addDoc, getDocs } from "firebase/firestore"; 
 
