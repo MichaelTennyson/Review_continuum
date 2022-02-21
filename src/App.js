@@ -1,7 +1,7 @@
 import React ,{useState, useEffect} from 'react';
 import './App.css';
-import { Redirect } from "react-router-dom";
-import { Form, Button, Card, Alert } from "react-bootstrap";
+import { Link  } from "react-router-dom";
+import { Form, Button, Card} from "react-bootstrap";
 import {db} from './firebase-config';
 
 import { collection, addDoc, getDocs } from "firebase/firestore"; 
@@ -67,7 +67,7 @@ function App() {
               <input type="password" className='nameUserInput' placeholder="password" onChange={(event) => {
                 setPassword(event.target.value)}}/>
               <Button onClick={createUser} className='Createuserbutton'>Login</Button>
-              <Redirect to='./Components/homePage' />
+              <Link to="./Components/homePage">Sign Up</Link>
             </div> 
 
 
