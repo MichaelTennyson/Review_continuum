@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from '../header/header.js';
-import Footer from '../footer/footer.js'
-import './index.css';
+import Header from './header.js';
+import Footer from './footer.js'
+import './review_index.css';
 import Comment from './comment.js';
 
 function Review(){

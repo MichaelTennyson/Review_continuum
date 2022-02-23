@@ -1,13 +1,16 @@
 import React ,{useState, useEffect} from 'react';
 import './App.css';
-import { Link  } from "react-router-dom";
+import { Link, Router, Route,  } from "react-router-dom";
 import { Form, Button, Card} from "react-bootstrap";
 import {db} from './firebase-config';
-import firebaseConfig from './firebase-config';
+import HomePage from './Components/homePage.js'
+
 
 import { collection, addDoc, getDocs } from "firebase/firestore"; 
 
-//use states that pass data to firestore database
+
+function App() {
+    //use states that pass data to firestore database
   const [newFirstName, setFirstName] = useState("");
   const [newSurName, setSurName] = useState("");
   const [newUserName, setUserName] = useState("");
@@ -28,15 +31,15 @@ import { collection, addDoc, getDocs } from "firebase/firestore";
         setUsers(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
     };
     getUsers();
-  }, []);
+  }, 
+  []);
 
 
-function App() {
- 
   //onchange events hook the input made by the user and passes it to the use state
   return (
     <Card>
       <Card.Body>
+      <h1 className='title'>Review Continuum</h1>
         <Form className="App">
           <div className='registration'>
               <h1>Registration</h1>
@@ -68,23 +71,14 @@ function App() {
               <input type="password" className='nameUserInput' placeholder="password" onChange={(event) => {
                 setPassword(event.target.value)}}/>
               <Button onClick={createUser} className='Createuserbutton'>Login</Button>
-              <Link to="./Components/homePage">Sign Up</Link>
+              <Router>
+                <div>
+                  <Route path="/homePage" component={HomePage} />
+                  <Link to="/homePage">homePage</Link>
+                </div>
+              </Router>
+
             </div> 
-
-
-          {Users.map((Users) => {
-                    //the following code displays the user details from the firebase dataabase
-                    return(
-                      <div>
-                          {""}
-                          <p> firstname:{Users.firstname}</p>
-                          <p> surname:{Users.surname}</p> 
-                          <p>username:{Users.username}</p> 
-                          <p>Email:{Users.Email}</p> 
-                          <p> password: {Users.password}</p> 
-                      </div>
-                    ); 
-                })}
         </Form>
       </Card.Body>  
     </Card>

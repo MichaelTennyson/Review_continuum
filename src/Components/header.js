@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
-import './index.css';
-import './index.js'
+import './header_style.css';
+import './header_index.js'
 function Header(){
      
     return(
@@ -16,6 +16,11 @@ function Header(){
                 <li className="headerItem">
                     <NavLink className="nav-link" to="/account">
                     Account
+                    </NavLink>
+                </li>
+                <li className="headerItem">
+                    <NavLink className="nav-link" to="/ModuleReviewForm">
+                    make a review
                     </NavLink>
                 </li>
                 <li className="headerItem">

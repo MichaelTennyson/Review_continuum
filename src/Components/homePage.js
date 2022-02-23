@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from './header/header.js';
+import Header from './header.js';
 import Footer from './footer.js';
-import './index.css';
+import './homePage_index.css';
 
 
-function HomePage({ authorized }){ 
+function HomePage(){ 
     return(
         <>
         <Header />

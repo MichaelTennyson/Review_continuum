@@ -1,5 +1,6 @@
 import React from 'react';
-import Header from '../header/header.js';
+import Header from './header.js';
+import Footer from './footer.js';
 import './index.css';
 
 function SearchPage(){
@@ -10,6 +11,7 @@ function SearchPage(){
         <h1 className='searchHeader'> Module search page</h1>
         <input input type="text" className='pagesearchbar' placeholder='search for a module'/>
         </div>
+        <Footer />
         </>
 
     )
