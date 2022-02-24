@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './header.js';
-import Footer from './footer.js'
+import Header from './header.jsx';
+import Footer from './footer.jsx'
 import './logout_index.css';
 
 function Logout(){

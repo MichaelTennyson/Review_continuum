@@ -1,13 +1,15 @@
 import {React} from 'react';
 import  {BrowserRouter as Router, Route, Routes}  from "react-router-dom";
-import {ReactDOM} from 'react-dom';
-import Header from './header.js';
-import  Account from './account.js';
-import  HomePage from './homePage.js';
-import  ModuleReviewForm from './ModuleReviewForm';
-import  Logout from './logout.js';
-import  SearchPage from './searchPage.js';
+import ReactDOM from "react-dom";
+import Header from './header.jsx';
+import  Account from './account.jsx';
+import  HomePage from './homePage.jsx';
+import  ModuleReviewForm from './ModuleReviewForm.jsx';
+import  Logout from './logout.jsx';
+import  SearchPage from './searchPage.jsx';
   
+
+
 ReactDOM.render(
     <Router>
       <Header/>
