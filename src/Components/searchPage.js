@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './header.js';
 import Footer from './footer.js';
-import './index.css';
+import './searchPage_index.css';
 
 function SearchPage(){
     return(

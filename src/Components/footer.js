@@ -6,7 +6,7 @@ function Footer(){
         <section className="footer">
             <hr className="footer-seperator"/>
             <section className="footer-social-media">
-                <a href = "https://www.linkedin.com/" target="_blank" rel="noopner noreference">LinkedIn</a>
+                <a href = "https://www.linkedin.com/" target="link" rel="noopner noreference">LinkedIn</a>
             </section>
             <section className="footer-info">
                 <section className="footer-left"> 

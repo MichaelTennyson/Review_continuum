@@ -77,6 +77,19 @@ function App() {
                   <Link to="/homePage">homePage</Link>
                 </div>
               </Router>
+              {Users.map((Users) => {
+                  //the following code displays the user details from the firebase dataabase
+                  return(
+                    <div>
+                        {""}
+                        <p> firstname:{Users.firstname}</p>
+                        <p> surname:{Users.surname}</p> 
+                        <p>username:{Users.username}</p> 
+                        <p>Email:{Users.Email}</p> 
+                        <p> password: {Users.password}</p> 
+                    </div>
+                  ); 
+              })}
 
             </div> 
         </Form>
