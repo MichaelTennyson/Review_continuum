@@ -3,7 +3,7 @@ import './App.css';
 import { Link, Router, Route,  } from "react-router-dom";
 import { Form, Button, Card} from "react-bootstrap";
 import {db} from './firebase-config';
-import HomePage from './Components/homePage.js'
+import HomePage from './Components/homePage.jsx'
 
 
 import { collection, addDoc, getDocs } from "firebase/firestore"; 

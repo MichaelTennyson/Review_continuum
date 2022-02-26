@@ -1,6 +1,5 @@
 import {React} from 'react';
 import  {BrowserRouter as Router, Route, Routes}  from "react-router-dom";
-import ReactDOM from "react-dom";
 import Header from './header.jsx';
 import  Account from './account.jsx';
 import  HomePage from './homePage.jsx';
@@ -9,8 +8,8 @@ import  Logout from './logout.jsx';
 import  SearchPage from './searchPage.jsx';
   
 
-
-ReactDOM.render(
+function headerIndex() {
+  return(
     <Router>
       <Header/>
       <Routes>
@@ -21,7 +20,9 @@ ReactDOM.render(
         <Route path="/searchpage" element={<SearchPage />}></Route>
       </Routes>
     </Router>
-);
+  );
 
+}
 
+export default headerIndex;
   
