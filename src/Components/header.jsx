@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import './header_style.css';
-import headerIndex from './header_index';
+import headerIndex from '../header_index';
 function Header()
     {
      
