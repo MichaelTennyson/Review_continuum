@@ -1,38 +1,42 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import './header_style.css';
-import headerIndex from '../header_index';
 function Header()
     {
      
         return(
-            <><headerIndex />
+            <>
             <div className='Headerdiv'>
                 <ul className='Header'>
                     <li className='headerItem'>
                         <NavLink className="nav-link" to="/homePage">
-                            Home
+                            Home Page
                             <span className="sr-only">(current)</span>
                         </NavLink>
                     </li>
                     <li className="headerItem">
                         <NavLink className="nav-link" to="/account">
-                            Account
+                            Account Page
                         </NavLink>
                     </li>
                     <li className="headerItem">
                         <NavLink className="nav-link" to="/ModuleReviewForm">
-                            make a review
+                            Review Form
                         </NavLink>
                     </li>
                     <li className="headerItem">
                         <NavLink className="nav-link" to="/logout">
-                            logout
+                            Logout
+                        </NavLink>
+                    </li>
+                    <li className="headerItem">
+                        <NavLink className="nav-link" to="/login">
+                            Login
                         </NavLink>
                     </li>
                     <li className="headerItem">
                         <NavLink className="nav-link" to="/searchPage">
-                            search page
+                            Search page
                         </NavLink>
                     </li>
 

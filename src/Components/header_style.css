@@ -3,13 +3,9 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: skyblue;
   }
   
-  .Headerdiv{
-    border: 1px solid blue;
-  }
-
+  
   .headerItem{
     float: center;
     float: center;
@@ -17,8 +13,10 @@
     color: white;
     background-color: blue;
     text-align: center;
-    padding: 14px 16px;
+    padding: 5px 5px;
     text-decoration: none;
+    width: 1000px;
+    height: 40px;
 
   }
   

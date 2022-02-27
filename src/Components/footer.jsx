@@ -3,47 +3,48 @@ import './footer_index.css';
 
 function Footer(){
     return(
-        <section className="footer">
+        <div className="footer">
             <hr className="footer-seperator"/>
-            <section className="footer-social-media">
+            <div className="footer-social-media">
                 <a href = "https://www.linkedin.com/" target="link" rel="noopner noreference">LinkedIn</a>
-            </section>
-            <section className="footer-info">
-                <section className="footer-left"> 
-                   <section className="footer-info-name">
+            </div>
+            <div className="footer-info">
+                <div className="footer-left"> 
+                   <div className="footer-info-name">
                         Michael Tennyson
-                    </section>
-                    <section className="footer-details">
+                    </div>
+                    <div className="footer-details">
                         Computer science student
                         <br />
                         At TUDublin
-                    </section>
-                <section className="footer-center">
-                    <section className="footer-info-email">
+                    </div>
+            <hr className="footer-seperator"/>
+                <div className="footer-center">
+                    <div className="footer-info-email">
                         C18302166@mytudublin.ie
-                    </section>
-                    <section className="footer-info-terms" >
+                    </div>
+                    <div className="footer-info-terms" >
                         Terms and conditions
                         <br />
                         Copyright
-                     </section>
-                </section>
-                <hr className="footer-seperator"/>
-                <section className="footer-right">
-                <section className="footer-info-number">
+                     </div>
+                </div>
+            <hr className="footer-seperator"/>
+                <div className="footer-right">
+                <div className="footer-info-number">
                         0899999999
-                    </section>
-                    <section className="footer-story" >
+                    </div>
+                    <div className="footer-story" >
                         My story
                         <br />
                         Contact us
-                     </section>
+                     </div>
 
-                </section>
-            </section>
+                </div>
+            </div>
             <hr className="footer-seperator"/>
-        </section>
-        </section>
+        </div>
+        </div>
     )
 
 }

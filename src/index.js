@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import "bootstrap/dist/css/bootstrap.min.css"
 import * as serviceWorker from './serviceWorker';
-import  {BrowserRouter as Router, Route, Routes}  from "react-router-dom";
+import App from "./App";
+import  { BrowserRouter as Router, Route, Routes}  from "react-router-dom";
 import Header from './Components/header.jsx';
 import  Account from './Components/account.jsx';
 import  HomePage from './Components/homePage.jsx';
@@ -12,8 +12,9 @@ import  Logout from './Components/logout.jsx';
 import  SearchPage from './Components/searchPage.jsx';
 
 ReactDOM.render(
+  <>
   <Router>
-    <Header/>
+    <Header />
     <Routes>
       <Route path="/homePage" element={<HomePage />} />
       <Route path="/account" element={<Account />} />
@@ -21,7 +22,8 @@ ReactDOM.render(
       <Route path="/logout" element={<ModuleReviewForm />} />
       <Route path="/searchpage" element={<SearchPage />}></Route>
     </Routes>
-  </Router>,
+  </Router>
+  </>,
   document.getElementById('root')
 );
 
