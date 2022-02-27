@@ -1,9 +1,11 @@
 import React ,{useState, useEffect} from 'react';
-import './App.css';
+import './Login_style.css';
 import { Link, Router, Route,  } from "react-router-dom";
 import { Form, Button, Card} from "react-bootstrap";
 import {db} from './firebase-config';
-import HomePage from './Components/homePage.jsx'
+import HomePage from './homePage.jsx'
+import Header from './header.jsx';
+import Footer from './footer.jsx'
 
 
 import { collection, addDoc, getDocs } from "firebase/firestore"; 
@@ -37,68 +39,77 @@ function Login() {
 
   //onchange events hook the input made by the user and passes it to the use state
   return (
-    <Card>
-      <Card.Body>
-      <h1 className='title'>Review Continuum</h1>
-        <Form className="App">
-          <div className='registration'>
-              <h1>Registration</h1>
-              <input className='nameUserInput' placeholder="firstname" onChange={(event) => {
-                setFirstName(event.target.value)}}/>
+    <><Header /><Card>
+          <Card.Body>
+              <h1 className='title'>Review Continuum</h1>
+              <Form className="App">
+                  <div className='registration'>
+                      <h1>Registration</h1>
+                      <input className='nameUserInput' placeholder="firstname" onChange={(event) => {
+                          setFirstName(event.target.value);
+                      } } />
 
-              <input className='nameUserInput' placeholder="surname" onChange={(event) => {
-                setSurName(event.target.value)}}/>
+                      <input className='nameUserInput' placeholder="surname" onChange={(event) => {
+                          setSurName(event.target.value);
+                      } } />
 
-              <input className='nameUserInput' placeholder="username" onChange={(event) => {
-                setUserName(event.target.value)}}/>
+                      <input className='nameUserInput' placeholder="username" onChange={(event) => {
+                          setUserName(event.target.value);
+                      } } />
 
-              <input className='nameUserInput' placeholder="email" onChange={(event) => {
-                setEmail(event.target.value)}}/>
+                      <input className='nameUserInput' placeholder="email" onChange={(event) => {
+                          setEmail(event.target.value);
+                      } } />
 
 
-              <input type="password" className='nameUserInput' placeholder="password" onChange={(event) => {
-                setPassword(event.target.value)}}/>
+                      <input type="password" className='nameUserInput' placeholder="password" onChange={(event) => {
+                          setPassword(event.target.value);
+                      } } />
 
-              <Button onClick={createUser} className='Createuserbutton'>register</Button>
-            </div>
-              
-          
-            <div className="login">
-              <h1>Login</h1>
-              <input className='nameUserInput' placeholder="username" onChange={(event) => {
-                setUserName(event.target.value)}}/>
+                      <Button onClick={createUser} className='Createuserbutton'>register</Button>
+                  </div>
 
-              <input type="password" className='nameUserInput' placeholder="password" onChange={(event) => {
-                setPassword(event.target.value)}}/>
-              <Button onClick={createUser} className='Createuserbutton'>Login</Button>
-              <Router>
-                <div>
-                  <Route path="/homePage" component={HomePage} />
-                  <Link to="/homePage">homePage</Link>
-                </div>
-              </Router>
-              {Users.map((Users) => {
-                  //the following code displays the user details from the firebase dataabase
-                  return(
-                    <div>
-                        {""}
-                        <p> firstname:{Users.firstname}</p>
-                        <p> surname:{Users.surname}</p> 
-                        <p>username:{Users.username}</p> 
-                        <p>Email:{Users.Email}</p> 
-                        <p> password: {Users.password}</p> 
-                    </div>
-                  ); 
-              })}
 
-            </div> 
-        </Form>
-      </Card.Body>  
-    </Card>
+                  <div className="login">
+                      <h1>Login</h1>
+                      <input className='nameUserInput' placeholder="username" onChange={(event) => {
+                          setUserName(event.target.value);
+                      } } />
+
+                      <input type="password" className='nameUserInput' placeholder="password" onChange={(event) => {
+                          setPassword(event.target.value);
+                      } } />
+                      <Button onClick={createUser} className='Createuserbutton'>Login</Button>
+                      <Router>
+                          <div>
+                              <Route path="/homePage" component={HomePage} />
+                              <Link to="/homePage">homePage</Link>
+                          </div>
+                      </Router>
+                      {Users.map((Users) => {
+                          //the following code displays the user details from the firebase dataabase
+                          return (
+                              <div>
+                                  {""}
+                                  <p> firstname:{Users.firstname}</p>
+                                  <p> surname:{Users.surname}</p>
+                                  <p>username:{Users.username}</p>
+                                  <p>Email:{Users.Email}</p>
+                                  <p> password: {Users.password}</p>
+                              </div>
+                          );
+                      })}
+
+                  </div>
+              </Form>
+          </Card.Body>
+      </Card>
+      <Footer />
+      </>
   
     
   );
 
 }
 
-  export default Login;
+export default Login;

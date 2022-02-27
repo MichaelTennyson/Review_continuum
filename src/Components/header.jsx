@@ -30,7 +30,7 @@ function Header()
                         </NavLink>
                     </li>
                     <li className="headerItem">
-                        <NavLink className="nav-link" to="/login">
+                        <NavLink className="nav-link" to="/Login">
                             Login
                         </NavLink>
                     </li>
