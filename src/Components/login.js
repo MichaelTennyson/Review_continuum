@@ -1,20 +1,13 @@
-import React ,{useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import './login_index.css';
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Form, Button, Card} from "react-bootstrap";
 import {db} from './firebase-config';
-import HomePage from './homePage.jsx'
-import Header from './header.jsx';
-import Footer from './footer.jsx'
-
-
 import { collection, addDoc, getDocs } from "firebase/firestore"; 
 
-
 function Login() {
-    let history = useHistory();
+    let navigate = useNavigate();
 
-    history.push('./homePage')
    //use states that pass data to firestore database
   const [newFirstName, setFirstName] = useState("");
   const [newSurName, setSurName] = useState("");
@@ -42,7 +35,8 @@ function Login() {
 
   //onchange events hook the input made by the user and passes it to the use state
   return (
-    <><Header /><Card>
+    <>
+    <Card>
           <Card.Body>
               <h1 className='title'>Review Continuum</h1>
               <Form className="App">
@@ -82,9 +76,9 @@ function Login() {
                       <input type="password" className='nameUserInput' placeholder="password" onChange={(event) => {
                           setPassword(event.target.value);
                       } } />
-                      
+
                       <Button className='Createuserbutton' onClick={() => {
-                          history.push("./homePage");}} >Login</Button>
+                          navigate("./homePage");}} >Login</Button>
                     
                       {Users.map((Users) => {
                           //the following code displays the user details from the firebase dataabase
@@ -104,7 +98,6 @@ function Login() {
               </Form>
           </Card.Body>
       </Card>
-      <Footer />
       </>
   
     

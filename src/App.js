@@ -1,17 +1,17 @@
-import './App,css';
-
-import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Login from "./Components/login";
-import HomePage from "./Components/homePage"
+import React from 'react';
+import './App.css';
+import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from "./Components/login.jsx";
+import HomePage from "./Components/homePage.jsx"
 
 
 function App(){
     return(
         <Router>
-            <Switch>
-                <Router exact path="/login" component={Login}/>
-                <Router exact path="/homePage" component={() => <HomePage authorized={false} />}/>
-            </Switch>
+            <Routes>
+                <Route exact path="/login" element={Login}/>
+                <Route exact path="/homePage" element={() => <HomePage authorized={false} />}/>
+            </Routes>
         </Router>
     );
 

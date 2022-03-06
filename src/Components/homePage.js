@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from './header.jsx';
-import Footer from './footer.jsx';
+import Header from './header.js';
+import Footer from './footer.js';
 import './homePage_index.css';
-import { Redirect } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 
 
 function HomePage({authorized}){ 
     if(!authorized){
-        return <Redirect to="/login" />;
+        return <Navigate to="/login" />;
     }
 
     return(
