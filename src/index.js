@@ -20,7 +20,7 @@ ReactDOM.render(
       <Route exact path="/ModuleReviewForm" element={<ModuleReviewForm />} />
       <Route exact path="/logout" element={<SearchPage />} />
       <Route exact path="/commentBox" element={<CommentBox />} />
-      <Route exact path="/homePage" element={() => <HomePage authorized={false} />} />
+      <Route exact path="/homePage" element={<HomePage />} />
     </Routes>
   </Router>
   </>,
