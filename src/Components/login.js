@@ -5,7 +5,8 @@ import { Form, Button, Card} from "react-bootstrap";
 import {db} from './firebase-config';
 import { collection, addDoc, getDocs } from "firebase/firestore"; 
 
-function Login() {
+function Login() 
+{
     let navigate = useNavigate();
 
    //use states that pass data to firestore database
@@ -80,20 +81,6 @@ function Login() {
                       <Button className='Createuserbutton' onClick={() => {
                           navigate("./homePage");}} >Login</Button>
                     
-                      {Users.map((Users) => {
-                          //the following code displays the user details from the firebase dataabase
-                          return (
-                              <div>
-                                  {""}
-                                  <p> firstname:{Users.firstname}</p>
-                                  <p> surname:{Users.surname}</p>
-                                  <p>username:{Users.username}</p>
-                                  <p>Email:{Users.Email}</p>
-                                  <p> password: {Users.password}</p>
-                              </div>
-                          );
-                      })}
-
                   </div>
               </Form>
           </Card.Body>
