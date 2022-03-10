@@ -77,8 +77,7 @@ function Login()
                           setPassword(event.target.value);
                       } } />
 
-                      <Button className='Createuserbutton' onClick={() => {
-                          navigate("./homePage");}} >Login</Button>
+                      <Button onClick={() => {navigate("homePage");}} className='Createuserbutton'  >Login </Button>
                     
                   </div>
               </Form>

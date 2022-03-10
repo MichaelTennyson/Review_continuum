@@ -16,13 +16,13 @@ ReactDOM.render(
   <>
   <Router>
     <Routes>
-      <Route exact path="/login" element={<Login />} />
-      <Route exact path="/ModuleReviewForm" element={<ModuleReviewForm />} />
-      <Route exact path="/commentBox" element={<CommentBox />} />
-      <Route exact path="/homePage" element={<HomePage />} />
-      <Route exact path="/logout" element={<Logout />} />
-      <Route exact path="/account" element={<Account />} />
-      <Route exact path="/searchPage" element={<SearchPage />} />
+      <Route exact path='/login' element={<Login />} />
+      <Route exact path='/ModuleReviewForm' element={<ModuleReviewForm />} />
+      <Route exact path='/commentBox' element={<CommentBox />} />
+      <Route exact path='/homePage' element={<HomePage />} />
+      <Route exact path='/logout' element={<Logout />} />
+      <Route exact path='/account' element={<Account />} />
+      <Route exact path='/searchPage' element={<SearchPage />} />
     </Routes>
   </Router>
   </>,
