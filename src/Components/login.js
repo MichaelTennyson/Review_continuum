@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Form, Button, Card} from "react-bootstrap";
 import {db} from './firebase-config';
 import { collection, addDoc, getDocs } from "firebase/firestore"; 
+import HomePage from './homePage';
 
 function Login() 
 {
@@ -32,8 +33,6 @@ function Login()
     getUsers();
   }, 
   []);
-
-
   //onchange events hook the input made by the user and passes it to the use state
   return (
     <>
@@ -51,7 +50,7 @@ function Login()
                           setSurName(event.target.value);
                       } } />
 
-                      <input className='nameUserInput' placeholder="username" onChange={(event) => {
+                      <input className='nameUserInput' placeholder="username - E.G> C12345678" onChange={(event) => {
                           setUserName(event.target.value);
                       } } />
 
