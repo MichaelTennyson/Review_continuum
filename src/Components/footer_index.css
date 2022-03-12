@@ -6,6 +6,7 @@
 
   .footer{
     margin-top: 150px;
+    display: bottom;
   }
   
   .footer-left, .footer-center, .footer-right {
@@ -43,7 +44,7 @@
     border: 1px solid blue;
     height: 1px;
     background-color: blue;
-    width: 100%;
+    width: flex;
   }
   
   .footer-name {

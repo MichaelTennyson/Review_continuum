@@ -11,7 +11,7 @@ function Header()
                     <li className='headerItem'>
                         <NavLink className="nav-link" to="/homePage">
                             Home Page
-                            <span className="sr-only">(current)</span>
+                            <span className="sr-only"></span>
                         </NavLink>
                     </li>
                     <li className="headerItem">
@@ -27,11 +27,6 @@ function Header()
                     <li className="headerItem">
                         <NavLink className="nav-link" to="/logout">
                             Logout
-                        </NavLink>
-                    </li>
-                    <li className="headerItem">
-                        <NavLink className="nav-link" to="/login">
-                            Login
                         </NavLink>
                     </li>
                     <li className="headerItem">

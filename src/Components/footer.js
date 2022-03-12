@@ -1,5 +1,13 @@
 import React from "react";
 import './footer_index.css';
+import {
+    Box,
+    Container,
+    Row,
+    Column,
+    FooterLink,
+    Heading,
+  } from "./FooterStyles"
 
 function Footer(){
     return(
