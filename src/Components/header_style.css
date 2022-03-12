@@ -10,12 +10,13 @@
     float: center;
     float: center;
     display: block;
-    color: white;
+    color: black;
+    text-decoration-color: black;
     background-color: blue;
     text-align: center;
     padding: 5px 5px;
     text-decoration: none;
-    width: 1000px;
+    width: flex;
     height: 40px;
 
   }

@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import './login_index.css';
-import { useNavigate } from "react-router-dom";
+import { useNavigate,} from "react-router-dom";
 import { Form, Button, Card} from "react-bootstrap";
 import {db} from './firebase-config';
 import { collection, addDoc, getDocs } from "firebase/firestore"; 
-import HomePage from './homePage';
 
 function Login() 
 {
@@ -76,8 +75,8 @@ function Login()
                       <input type="password" className='nameUserInput' placeholder="password" onChange={(event) => {
                           setPassword(event.target.value);
                       } } />
-
-                      <Button onClick={() => {navigate("homePage");}} className='Createuserbutton'  >Login </Button>
+                  
+                      <Button onClick={() => {navigate('/homePage')}} className='Createuserbutton'  >Login </Button>
                     
                   </div>
               </Form>

@@ -5,11 +5,7 @@ import './homePage_index.css';
 import { Navigate } from 'react-router-dom'
 
 
-function HomePage({authorized}){ 
-    if(!authorized){
-        return <Navigate to="/login" />;
-    }
-
+function HomePage(){ 
     return(
         <>
         <Header />
