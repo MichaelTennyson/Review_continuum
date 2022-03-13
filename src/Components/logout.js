@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './header.js';
 import Footer from './footer.js'
 import './logout_index.css';
 import { useNavigate} from "react-router-dom";
