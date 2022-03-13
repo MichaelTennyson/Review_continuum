@@ -17,6 +17,12 @@ function ModuleReviewForm(){
     const [q7, setq7] = useState("");
     const [review, setreview] = useState([]);
     const usersCollectionRef = collection(db, "Users");
+
+    // function to pass user details 
+  const createUser = async () => {
+    await addDoc(usersCollectionRef, {name: newFirstName, surname: newSurName, username: newUserName, password: newPassword, email: newEmail});
+  };
+
   
 
     return(

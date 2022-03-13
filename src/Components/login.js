@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './login_index.css';
-import { useNavigate,} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import { Form, Button, Card} from "react-bootstrap";
 import {db} from './firebase-config';
 import { collection, addDoc, getDocs } from "firebase/firestore"; 
