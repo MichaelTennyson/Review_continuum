@@ -11,8 +11,9 @@
  .TLDR{
    border: 1px solid gray;
    justify-content: center;
-   width: 55px;
+   width: 405px;
    height: 55px;
+   margin-left: 50%;
  }
  
  .submitButton{

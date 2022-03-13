@@ -6,8 +6,8 @@ import './logout_index.css';
 function Logout(){
     return(
         <>
-        <Header />
         <h1 className="logoutText"> You are now logged out!</h1>
+        
         <Footer />
         </>
     )

@@ -2,31 +2,66 @@ import React from 'react';
 import Header from './header.js';
 import Footer from './footer.js'
 import './review_index.css';
+import {db} from './firebase-config';
+import { collection, addDoc, getDocs } from "firebase/firestore"; 
+import { Form, Button} from "react-bootstrap";
 
 function ModuleReviewForm(){
+
+    const [q1, setq1] = useState("");
+    const [q2, setq2] = useState("");
+    const [q3, setq3] = useState("");
+    const [q4, setq4] = useState("");
+    const [q5, setq5] = useState("");
+    const [q6, setq6] = useState("");
+    const [q7, setq7] = useState("");
+    const [review, setreview] = useState([]);
+    const usersCollectionRef = collection(db, "Users");
+  
 
     return(
         <>
         <Header />
         <h1> Review page</h1>
-        <div className='review_form'>
-            <label className='reviewQ'>General description of your experience with the module</label>
-            <input type="text" className='TLDR' placeholder='General description'></input>
-            <label className='reviewQ'>What do you think of the lecturers teaching</label>
-            <input type="text" className='TLDR' placeholder='Did they teach well or not'></input>
-            <label className='reviewQ'>How were the module contents taught?</label>
-            <input type="text" className='TLDR' placeholder='how was the module taught to you?'></input>
-            <label className='reviewQ'>How did you feel about the assessments</label>
-            <input type="text" className='TLDR' placeholder='what did you think of the tests, quizes and assignments etc.'></input>
-            <label className='reviewQ'>How could teaching be improved</label>
-            <input type="text" className='TLDR' placeholder='Give tips on teaching methods'></input>
-            <label className='reviewQ'>How could assessments be  improved</label>
-            <input type="text" className='TLDR' placeholder='describe how assessments could be delivered in a better way'></input>
-            <label className='reviewQ'>what did you think of the workload of this module</label>
-            <input type="text" className='TLDR' placeholder='was the workload hard or easy to manage?'></input>
-            <button className='submitButton'> Submit</button>
+        <Form>
+            <div className='review_form'>
+                <label className='reviewQ' >General description of your experience with the module</label>
+                <input type="text" className='TLDR' placeholder='General description' onChange={(event) => {
+                            setq1(event.target.value);
+                        } }></input>
 
-        </div>
+                <label className='reviewQ'>What do you think of the lecturers teaching</label>
+                <input type="text" className='TLDR' placeholder='Did they teach well or not' onChange={(event) => {
+                            setq2(event.target.value);
+                        } }></input>
+
+                <label className='reviewQ'>How were the module contents taught?</label>
+                <input type="text" className='TLDR' placeholder='how was the module taught to you?' onChange={(event) => {
+                            setq3(event.target.value);
+                        } }></input>
+
+                <label className='reviewQ'>How did you feel about the assessments</label>
+                <input type="text" className='TLDR' placeholder='what did you think of the tests, quizes and assignments etc.' onChange={(event) => {
+                            setq4(event.target.value);
+                        } }></input>
+
+                <label className='reviewQ'>How could teaching be improved</label>
+                <input type="text" className='TLDR' placeholder='Give tips on teaching methods' onChange={(event) => {
+                            setq5(event.target.value);
+                        } }></input>
+                <label className='reviewQ'>How could assessments be  improved</label>
+                <input type="text" className='TLDR' placeholder='describe how assessments could be delivered in a better way' onChange={(event) => {
+                            setq6(event.target.value);
+                        } }></input>
+
+                <label className='reviewQ'>what did you think of the workload of this module</label>
+                <input type="text" className='TLDR' placeholder='was the workload hard or easy to manage?' onChange={(event) => {
+                            setq7(event.target.value);
+                        } }></input>
+                < Button className='submitButton'> Submit</Button>
+
+            </div>
+        </Form>
         <Footer />
         </>
     )
