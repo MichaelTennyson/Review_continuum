@@ -11,13 +11,11 @@
     align-content: center;
     justify-content: center;
     margin-right: 400px;
-    display: flex;
     
   }
   
   .login{
     align-content:left;
-    display: flex;
   }
   
   .name-wrap{

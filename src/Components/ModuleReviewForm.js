@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Header from './header.js';
 import Footer from './footer.js'
 import './review_index.css';
-import {db} from './firebase-config';
+import {db} from '../firebase-config';
 import { collection, addDoc, getDocs } from "firebase/firestore"; 
 import { Form, Button} from "react-bootstrap";
 
