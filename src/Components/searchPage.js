@@ -7,6 +7,7 @@ import {Button} from "react-bootstrap";
 function SearchPage(){
 
     const [search, setSearch] = useState("");
+    const [result, setResult] = useState([]);
     // the following use effect uses the fetch API that gets the details
     useEffect(() =>{
         if(value.length > 0){
@@ -14,8 +15,24 @@ function SearchPage(){
                 response => response.json
             ).then(responseData => {
                 //search query set to lowercase
+                setResult([]);
                 let searchQuery = value.toLowerCase();
+                //loops across the data in the JSON file
+                for(const key in responseData){
+                    let module = responseData[key].module_name.toLowerCase();
+                    if(module.slice(0, searchQuery.length).indexOf(searchQuery) !== -1){
+                        setResult(prevResult => {
+                            return[...prevResult, responseData[key].module_name]
+                        })
+                    }
+                }
+                //error checking
+            }).catch(error =>{
+                console.log(error);
             })
+        }else{
+            //if the value of the search result is not greater than 0
+            setResult([]);
         }
 
     }, [value] )
@@ -31,12 +48,14 @@ function SearchPage(){
                             value={search}
                             />
                 <div className='searchBack'>
-                    <div className='searchEntry'>
-                        This is a static placeholder
-                    </div>
-                    <div className='searchEntry'>
-                        This is a static placeholder
-                   </div>
+                    {result.map((result, index) => (
+                        <a href="#" key={index} >
+                           <div className='searchEntry'>
+                               {result}
+                            </div> 
+
+                        </a>
+                    ))}
                 </div>   
             </div>
             <Button className='searchButton'>search</Button>
