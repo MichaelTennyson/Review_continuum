@@ -10,13 +10,13 @@ function SearchPage(){
     const [result, setResult] = useState([]);
     // the following use effect uses the fetch API that gets the details
     useEffect(() =>{
-        if(value.length > 0){
+        if(search.length > 0){
             fetch('https://review-continuum-default-rtdb.europe-west1.firebasedatabase.app/modules.json').then(
                 response => response.json
             ).then(responseData => {
                 //search query set to lowercase
                 setResult([]);
-                let searchQuery = value.toLowerCase();
+                let searchQuery = search.toLowerCase();
                 //loops across the data in the JSON file
                 for(const key in responseData){
                     let module = responseData[key].module_name.toLowerCase();
@@ -35,7 +35,7 @@ function SearchPage(){
             setResult([]);
         }
 
-    }, [value] )
+    }, [search ])
 
     // html strucuture for the search page
     return(
