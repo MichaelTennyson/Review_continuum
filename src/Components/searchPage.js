@@ -6,7 +6,7 @@ import {Button} from "react-bootstrap";
 
 function SearchPage(){
 
-    const [search, setSearch] = useState("");
+    const [search, setSearch] = useState('');
     const [result, setResult] = useState([]);
     // the following use effect uses the fetch API that gets the details
     useEffect(() =>{
