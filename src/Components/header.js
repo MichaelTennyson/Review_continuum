@@ -37,6 +37,11 @@ function Header()
                             Search page
                         </NavLink>
                     </li>
+                    <li className="headerItem">
+                        <NavLink className="nav-link" to="/review">
+                            Review
+                        </NavLink>
+                    </li>
 
                 </ul>
             </div></>

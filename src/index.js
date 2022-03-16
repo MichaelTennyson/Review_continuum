@@ -23,7 +23,7 @@ ReactDOM.render(
       <Route exact path='/logout' element={<Logout />} />
       <Route exact path='/account' element={<Account />} />
       <Route exact path='/searchPage' element={<SearchPage />} />
-      <Route exact path='/searchPage' element={<SearchPage />} />
+      <Route exact path='/review' element={<Review />} />
     </Routes>
   </Router>
   </>,
