@@ -1,52 +1,78 @@
 import React from "react";
-import './footer_index.css';
-
+import {
+  Box,
+  Container,
+  Row,
+  Column,
+  FooterLink,
+  Heading,
+} from "./Footer_index.js";
+  
 function Footer(){
-    return(
-        <div className="footer">
-            <hr className="footer-seperator"/>
-            <div className="footer-social-media">                    
-                <a href = "https://www.linkedin.com/" target="link" rel="noopner noreference">LinkedIn</a>
-             </div>
-                <div className="footer-info">
-                    <div className="footer-left"> 
-                    <div className="footer-info-name">
-                            Michael Tennyson
-                        </div>
-                        <div className="footer-details">
-                            Computer science student
-                            <br />
-                            At TUDublin
-                        </div>
-                <hr className="footer-seperator"/>
-                    <div className="footer-center">
-                        <div className="footer-info-email">
-                            C18302166@mytudublin.ie
-                        </div>
-                        <div className="footer-info-terms" >
-                            Terms and conditions
-                            <br />
-                            Copyright
-                        </div>
-                    </div>
-                <hr className="footer-seperator"/>
-                    <div className="footer-right">
-                    <div className="footer-info-number">
-                            0899999999
-                        </div>
-                        <div className="footer-story" >
-                            My story
-                            <br />
-                            Contact us
-                        </div>
-
-                    </div>
-                </div>
-                <hr className="footer-seperator"/>
-            </div>
-         </div>
-    );
-
+  return (
+    <Box>
+      <h1 style={{ color: "green", 
+                   textAlign: "center", 
+                   marginTop: "-50px" }}>
+        Review continuum footer
+      </h1>
+      <Container>
+        <Row>
+          <Column>
+            <Heading>About Us</Heading>
+            <FooterLink href="#">Aim</FooterLink>
+            <FooterLink href="#">Vision</FooterLink>
+            <FooterLink href="#">Testimonials</FooterLink>
+          </Column>
+          <Column>
+            <Heading>Services</Heading>
+            <FooterLink href="#">Reviews</FooterLink>
+            <FooterLink href="#">comment section</FooterLink>
+            <FooterLink href="#">chat</FooterLink>
+            <FooterLink href="#">search</FooterLink>
+          </Column>
+          <Column>
+            <Heading>Contact Us</Heading>
+            <FooterLink href="#">Tudublin.ie</FooterLink>
+            <FooterLink href="#">C18302166@mytudublin.ie</FooterLink>
+            <FooterLink href="#">Dublin</FooterLink>
+            <FooterLink href="#">Ireland</FooterLink>
+          </Column>
+          <Column>
+            <Heading>Social Media</Heading>
+            <FooterLink href="#">
+              <i className="fab fa-facebook-f">
+                <span style={{ marginLeft: "10px" }}>
+                  LinkedIn
+                </span>
+              </i>
+            </FooterLink>
+            <FooterLink href="#">
+              <i className="fab fa-instagram">
+                <span style={{ marginLeft: "10px" }}>
+                  Instagram
+                </span>
+              </i>
+            </FooterLink>
+            <FooterLink href="#">
+              <i className="fab fa-twitter">
+                <span style={{ marginLeft: "10px" }}>
+                  Twitter
+                </span>
+              </i>
+            </FooterLink>
+            <FooterLink href="#">
+              <i className="fab fa-youtube">
+                <span style={{ marginLeft: "10px" }}>
+                  Youtube
+                </span>
+              </i>
+            </FooterLink>
+          </Column>
+        </Row>
+      </Container>
+    </Box>
+  );
 }
 
 export default Footer;
