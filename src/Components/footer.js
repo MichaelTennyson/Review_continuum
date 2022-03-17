@@ -6,7 +6,7 @@ import {
   Column,
   FooterLink,
   Heading,
-} from "./Footer_index.js";
+} from "./footer_index.js";
   
 function Footer(){
   return (

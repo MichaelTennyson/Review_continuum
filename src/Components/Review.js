@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './header.js';
 import Footer from './footer.js'
 import './review_index.css';
-import Comment from './comment.js';
+import Comment from './commentBox.js';
 
 function Review(){
 
@@ -31,12 +31,10 @@ function Review(){
 
             <label className='reviewQ'>what did you think of the workload of this module</label>
             <p>It was great</p>
-
+            <Comment />
 
         </div>
-        <Comment />
         <Footer />
-
         </>
     )
 

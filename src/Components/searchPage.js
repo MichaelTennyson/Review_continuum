@@ -45,11 +45,10 @@ function SearchPage(){
                 <h1 className='searchHeader'> Module search page</h1>
                 <input input type="text" className='pagesearchbar' placeholder='search for a module' onChange={(event) => {
                             setSearch(event.target.value); } }
-                            value={search}
                             />
                 <div className='searchBack'>
                     {result.map((result, index) => (
-                        <a href="#" key={index} >
+                        <a href="/review" key={index} >
                            <div className='searchEntry'>
                                {result}
                             </div> 
@@ -64,6 +63,6 @@ function SearchPage(){
 
     );
 
-}
+} 
 
 export default SearchPage;

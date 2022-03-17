@@ -10,6 +10,7 @@ import SearchPage from "./Components/searchPage.js";
 import ModuleReviewForm from "./Components/ModuleReviewForm.js";
 import CommentBox from "./Components/commentBox.js";
 import HomePage from "./Components/homePage.js";
+import Review from "./Components/Review";
 
 
 ReactDOM.render(
