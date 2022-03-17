@@ -10,7 +10,7 @@ function HomePage(){
         <Header />
         <div className="HomePage">
             <h1 className='Heading'>Welcome to Review Continuum!!</h1>
-            <p> on this website, you can search for modules, review modules, comment under modules and also chat with others on the modules</p>
+            <p className='paragraph1'> on this website, you can search for modules, review modules, comment under modules and also chat with others on the modules</p>
         </div>
         <Footer />
         </>
