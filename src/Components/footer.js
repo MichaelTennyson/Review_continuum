@@ -14,7 +14,7 @@ function Footer(){
       <h1 style={{ color: "black", 
                    textAlign: "center", 
                    marginTop: "-50px" }}>
-        Review continuum footer
+        Review continuum 
       </h1>
       <Container>
         <Row>

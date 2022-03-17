@@ -31,9 +31,10 @@ function Review(){
 
             <label className='reviewQ'>what did you think of the workload of this module</label>
             <p>It was great</p>
-            <Comment />
+            
 
         </div>
+        <Comment />
         <Footer />
         </>
     )

@@ -4,13 +4,11 @@ export const Box = styled.div`
   padding: 80px 60px;
   background: rgb(0, 174, 255);
   position: absolute;
-  bottom: 0;
-  height: 75%;
+  bottom: 1;
   width: 100%;
-  
-   
+    
   @media (max-width: 1000px) {
-    padding: 70px 30px;
+    padding: 40px 40px;
   }
 `;
    

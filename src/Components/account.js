@@ -16,8 +16,9 @@ function Account(){
                    <div className="module2"> Databases 2</div>
              </div>
             </div>
-        <Footer />
+            <Footer />
         </>
+         
     )
 }
 
