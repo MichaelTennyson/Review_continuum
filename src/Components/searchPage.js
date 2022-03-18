@@ -55,9 +55,10 @@ function SearchPage(){
 
                         </a>
                     ))}
-                </div>   
+                </div>
+                <Button className='searchButton'>search</Button>   
             </div>
-            <Button className='searchButton'>search</Button>
+            
        <Footer />
        </>
 

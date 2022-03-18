@@ -1,6 +1,8 @@
 .searchpagewrap{
     align-content: center;
     justify-content: center;
+    width: 400px;
+    height: 400px;
   }
   
   .pagesearchbar{
@@ -20,4 +22,9 @@
     padding: 10px 20px;
     border: 1px solid black;
     border-top: none;
+  }
+
+  .searchButton{
+    margin-left: 100px;
+    margin-bottom: 250px;
   }
