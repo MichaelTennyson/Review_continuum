@@ -1,6 +1,4 @@
 import React from "react";
-import Header from './header.js';
-import Footer from './footer.js'
 import './commentBox_index.css';
 import React, {useState, useEffect} from 'react';
 import {db} from '../firebase-config';
