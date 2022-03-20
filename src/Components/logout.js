@@ -6,7 +6,7 @@ import Login from './login.js';
 function Logout(){
     return(
         <>
-        <h1 className="logoutText"> You are now logged out!</h1>
+        <h1 className="logoutText"> You are now logged out!, log back in to review a module !</h1>
         <Login />
         </>
     )
