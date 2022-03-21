@@ -35,7 +35,7 @@ function Login()
   //onchange events hook the input made by the user and passes it to the use state
   return (
     <>
-    <Card>
+    <Card className='login_card'>
           <Card.Body>
               <h1 className='title'>Review Continuum</h1>
               <Form className="App">

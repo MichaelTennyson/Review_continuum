@@ -1,4 +1,3 @@
-import React from "react";
 import './commentBox_index.css';
 import React, {useState, useEffect} from 'react';
 import {db} from '../firebase-config';

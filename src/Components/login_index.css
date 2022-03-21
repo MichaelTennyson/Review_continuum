@@ -6,6 +6,10 @@
     height: 100px;
     display: flex;
   }
+
+  .login_card{
+    display: flex;
+  }
   
   .registration{
     align-content: center;
