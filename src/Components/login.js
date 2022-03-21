@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './login_index.css';
 import {
     createUserWithEmailAndPassword,
@@ -9,7 +9,6 @@ import {
 import { useNavigate} from "react-router-dom";
 import { Form, Button, Card} from "react-bootstrap";
 import { auth } from '../firebase-config';
-import { collection, addDoc, getDocs } from "firebase/firestore"; 
 
 function Login() 
 {
