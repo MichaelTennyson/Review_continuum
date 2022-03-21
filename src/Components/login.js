@@ -8,7 +8,7 @@ import {
   } from "firebase/auth";
 import { useNavigate} from "react-router-dom";
 import { Form, Button, Card} from "react-bootstrap";
-import {db, auth} from '../firebase-config';
+import { auth } from '../firebase-config';
 import { collection, addDoc, getDocs } from "firebase/firestore"; 
 
 function Login() 
@@ -21,8 +21,7 @@ function Login()
   const [loginPassword, setloginPassword] = useState("");
   const [loginEmail, setloginEmail] = useState("");
   const [user, setUser] = useState({});
-  const usersCollectionRef = collection(db, "Users");
-
+  
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
   });
@@ -32,8 +31,8 @@ function Login()
     try {
       const user = await createUserWithEmailAndPassword(
         auth,
-        registerEmail,
-        registerPassword
+        newEmail,
+        newPassword
       );
       console.log(user);
     } catch (error) {
@@ -84,23 +83,28 @@ function Login()
                         }}
                         />
 
-                      <Button onClick={createUser} className='Createuserbutton'>register</Button>
+                      <Button onClick={register} className='Createuserbutton'>register</Button>
                   </div>
 
 
                   <div className="login">
                       <h1>Login</h1>
-                      <input className='nameUserInput' placeholder="username" onChange={(event) => {
-                          setUserName(event.target.value);
+                      <input className='nameUserInput' placeholder="email" onChange={(event) => {
+                          setloginEmail(event.target.value);
                       } } />
 
                       <input type="password" className='nameUserInput' placeholder="password" onChange={(event) => {
-                          setPassword(event.target.value);
+                          setloginPassword(event.target.value);
                       } } />
                   
-                      <Button onClick={() => {navigate('/homePage')}} className='Createuserbutton'  >Login </Button>
+                      <Button onClick={login} className='Createuserbutton'  >Login </Button>
                     
                   </div>
+
+                  <h4> User Logged In: </h4>
+                    {user?.email}
+
+                  <button onClick={logout}> Sign Out </button>
               </Form>
           </Card.Body>
       </Card>
