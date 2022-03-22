@@ -64,27 +64,27 @@ function Login()
   return (
     <>
     <Card className='login_card'>
-          <Card.Body>
+          <Card.Body className='body'>
               <h1 className='title'>Review Continuum</h1>
               <Form className="App">
                   <div className='registration'>
                       <h1>Registration</h1>
                       <input
                         placeholder="enter your Email address"
+                        className='nameUserInput'
                         onChange={(event) => {
                             setEmail(event.target.value);
                         }}
                         />
                         <input
                         placeholder=" enter your Password."
+                        className='nameUserInput'
                         onChange={(event) => {
                             setPassword(event.target.value);
                         }}
                         />
-
                       <Button onClick={register} className='Createuserbutton'>register</Button>
                   </div>
-
 
                   <div className="login">
                       <h1>Login</h1>
