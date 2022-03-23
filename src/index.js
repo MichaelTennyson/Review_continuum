@@ -11,7 +11,7 @@ import ModuleReviewForm from "./Components/ModuleReviewForm.js";
 import CommentBox from "./Components/commentBox.js";
 import HomePage from "./Components/homePage.js";
 import Review from "./Components/Review";
-
+import {AuthProvider} from "./auth";
 
 ReactDOM.render(
   <>
