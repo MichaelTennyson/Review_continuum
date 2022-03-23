@@ -15,12 +15,13 @@ function ModuleReviewForm(){
     const [q5, setq5] = useState("");
     const [q6, setq6] = useState("");
     const [q7, setq7] = useState("");
+    const [q8, setq8] = useState("");
     const [review, setReview] = useState([]);
     const reviewCollectionRef = collection(db, "review");
 
     // function to pass user details 
   const uploadReview = async () => {
-    await addDoc(reviewCollectionRef, {q1: q1, q2: q2, q3: q3, q4: q4, q5: q5, q6: q6, q7: q7});
+    await addDoc(reviewCollectionRef, {q1: q1, q2: q2, q3: q3, q4: q4, q5: q5, q6: q6, q7: q7,q8: q8});
   };
 
   useEffect(() => {
@@ -71,6 +72,11 @@ function ModuleReviewForm(){
                 <label className='reviewQ'>what did you think of the workload of this module</label>
                 <input type="text" className='TLDR' placeholder='was the workload hard or easy to manage?' onChange={(event) => {
                             setq7(event.target.value);
+                        } }></input>
+
+                <label className='reviewQ'>give some extra feedback</label>
+                <input type="text" className='TLDR' placeholder='write about other things that you experienced in the module' onChange={(event) => {
+                            setq8(event.target.value);
                         } }></input>
                 < Button onClick={uploadReview}  className='submitButton'> Submit Review</Button>
 

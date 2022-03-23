@@ -26,7 +26,7 @@ function Footer(){
           </Column>
           <Column>
             <Heading>Services</Heading>
-            <FooterLink href="/ModuleReviewForm">Reviews</FooterLink>
+            <FooterLink href="/ModuleReviewForm"> upload a Review</FooterLink>
             <FooterLink href="/review">view review</FooterLink>
             <FooterLink href="/Chat">chat</FooterLink>
             <FooterLink href="/searchPage">search</FooterLink>
@@ -35,8 +35,8 @@ function Footer(){
             <Heading>Contact Us</Heading>
             <FooterLink href="https://www.tudublin.ie/">Tudublin.ie</FooterLink>
             <FooterLink href="https://www.tudublin.ie/explore/our-campuses/grangegorman/">Grangegorman</FooterLink>
-            <FooterLink href="#">Dublin</FooterLink>
-            <FooterLink href="#">Ireland</FooterLink>
+            <FooterLink href="#"> 0877111820</FooterLink>
+            <FooterLink href="#">c18302166@mytudublin.ie</FooterLink>
           </Column>
           <Column>
             <Heading>Social Media</Heading>
