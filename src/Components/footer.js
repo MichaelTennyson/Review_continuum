@@ -19,49 +19,49 @@ function Footer(){
       <Container>
         <Row>
           <Column>
-            <Heading>About Us</Heading>
+            <Heading>About Review continuum</Heading>
             <FooterLink href="#">Aim</FooterLink>
             <FooterLink href="#">Vision</FooterLink>
             <FooterLink href="#">Testimonials</FooterLink>
           </Column>
           <Column>
             <Heading>Services</Heading>
-            <FooterLink href="#">Reviews</FooterLink>
-            <FooterLink href="#">comment section</FooterLink>
-            <FooterLink href="#">chat</FooterLink>
-            <FooterLink href="#">search</FooterLink>
+            <FooterLink href="/ModuleReviewForm">Reviews</FooterLink>
+            <FooterLink href="/review">view review</FooterLink>
+            <FooterLink href="/Chat">chat</FooterLink>
+            <FooterLink href="/searchPage">search</FooterLink>
           </Column>
           <Column>
             <Heading>Contact Us</Heading>
-            <FooterLink href="#">Tudublin.ie</FooterLink>
-            <FooterLink href="#">C18302166@mytudublin.ie</FooterLink>
+            <FooterLink href="https://www.tudublin.ie/">Tudublin.ie</FooterLink>
+            <FooterLink href="https://www.tudublin.ie/explore/our-campuses/grangegorman/">Grangegorman</FooterLink>
             <FooterLink href="#">Dublin</FooterLink>
             <FooterLink href="#">Ireland</FooterLink>
           </Column>
           <Column>
             <Heading>Social Media</Heading>
-            <FooterLink href="#">
+            <FooterLink href="https://www.linkedin.com/feed/">
               <i className="fab fa-facebook-f">
                 <span style={{ marginLeft: "10px" }}>
                   LinkedIn
                 </span>
               </i>
             </FooterLink>
-            <FooterLink href="#">
+            <FooterLink href="https://www.instagram.com/">
               <i className="fab fa-instagram">
                 <span style={{ marginLeft: "10px" }}>
                   Instagram
                 </span>
               </i>
             </FooterLink>
-            <FooterLink href="#">
+            <FooterLink href="https://twitter.com/">
               <i className="fab fa-twitter">
                 <span style={{ marginLeft: "10px" }}>
-                  Twitter
+                  twitter
                 </span>
               </i>
             </FooterLink>
-            <FooterLink href="#">
+            <FooterLink href="https://www.youtube.com/">
               <i className="fab fa-youtube">
                 <span style={{ marginLeft: "10px" }}>
                   Youtube

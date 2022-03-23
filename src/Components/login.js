@@ -12,7 +12,7 @@ import { auth } from '../firebase-config';
 
 function Login() 
 {
-    let navigate = useNavigate();
+  let navigate = useNavigate();
 
    //use states that pass data to firestore database
   const [newPassword, setPassword] = useState("");
@@ -24,6 +24,10 @@ function Login()
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
   });
+
+  const nav = async() => {
+    navigate("/homePage");
+  }
 
   //register user method
   const register = async () => {
@@ -97,6 +101,7 @@ function Login()
                       } } />
                   
                       <Button onClick={login} className='Createuserbutton'  >Login </Button>
+                      <Button onClick={nav} className='Createuserbutton'  >navigate </Button>
                     
                   </div>
 
