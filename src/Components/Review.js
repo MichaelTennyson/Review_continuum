@@ -5,7 +5,7 @@ import './review_index.css';
 import Comment from './commentBox.js';
 
 function Review(){
-
+    //review form HTML structure
     return(
         <>
         <Header />

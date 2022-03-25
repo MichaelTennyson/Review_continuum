@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './login_index.css';
+
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
@@ -9,7 +10,6 @@ import {
 import { useNavigate} from "react-router-dom";
 import { Form, Button, Card} from "react-bootstrap";
 import { auth } from '../firebase-config';
-
 function Login() 
 {
   let navigate = useNavigate();
@@ -25,9 +25,6 @@ function Login()
     setUser(currentUser);
   });
 
-  const nav = async() => {
-    navigate("/homePage");
-  }
 
   //register user method
   const register = async () => {
@@ -51,11 +48,13 @@ function Login()
         loginEmail,
         loginPassword
       );
+      navigate("/homePage")
       console.log(user);
     } catch (error) {
       console.log(error.message);
     }
   };
+
 
 
   //logout method
@@ -82,6 +81,7 @@ function Login()
                         />
                         <input
                         placeholder=" enter your Password."
+                        type="password"
                         className='nameUserInput'
                         onChange={(event) => {
                             setPassword(event.target.value);
@@ -101,7 +101,6 @@ function Login()
                       } } />
                   
                       <Button onClick={login} className='Createuserbutton'  >Login </Button>
-                      <Button onClick={nav} className='Createuserbutton'  >navigate </Button>
                     
                   </div>
 

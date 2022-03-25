@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import './header_style.css';
-import { Button } from "react-bootstrap";
-import { app } from '../firebase-config';
+
 function Header()
     {
      
@@ -28,11 +27,6 @@ function Header()
                         <NavLink className="nav-link" to="/ModuleReviewForm">
                             Review Form
                         </NavLink>
-                    </li>
-                    <li className="headerItem">
-                        <Button className="nav-link" onClick={() => app.auth().signOut()}>
-                            Logout
-                        </Button>
                     </li>
                     <li className="headerItem">
                         <NavLink className="nav-link" to="/searchPage">

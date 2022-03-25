@@ -1,23 +1,51 @@
-import React, {useState, useEffect} from 'react';
-import { app } from '../firebase-config';
+import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut
+} from "firebase/auth";
+import { auth } from "./firebase-config";
 
-export const Authcontext = React.createContext();
+const userAuthContext = createContext();
 
-export const AuthProvider = ({children}) => {
-    const [currentUser, setCurrentUser] = useState(null);
 
-    useEffect(() => {
-        app.auth().onAuthStateChanged(setCurrentUser);
+//user auth context provider establishes suthentication across the application
+export function UserAuthContextProvider({ children }) {
+  const [user, setUser] = useState({});
 
-    }, [])
+  function login(email, password) {
+    return signInWithEmailAndPassword(auth, email, password);
+  }
+  function register(email, password) {
+    return createUserWithEmailAndPassword(auth, email, password);
+  }
+  function logout() {
+    return signOut(auth);
+  }
 
-    return(
-        <Authcontext.Provider
-            value={{
-                currentUser
-            }}
-        >
-            {children}
-        </Authcontext.Provider>
-    );
-};
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
+      console.log("Auth", currentuser);
+      setUser(currentuser);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+
+  //returns the universal
+  return (
+    <userAuthContext.Provider
+      value={{ user, login, register, logout }}
+    >
+      {children}
+    </userAuthContext.Provider>
+  );
+}
+
+export function useUserAuth() {
+  return useContext(userAuthContext);
+}
