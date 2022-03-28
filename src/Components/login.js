@@ -20,6 +20,7 @@ function Login() {
   const [loginEmail, setloginEmail] = useState("");
   const [user, setUser] = useState({});
   
+  //on auth state change method that sets the user to the current user logged in
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
   });

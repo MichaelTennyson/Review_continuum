@@ -20,6 +20,7 @@ function SearchPage(){
                 let searchQuery = search.toLowerCase();
                 //loops across the data in the JSON file
                 for(const key in responseData){
+                    //module variables is assigned the key and modoule name in lowercase
                     let module = responseData[key].module_name.toLowerCase();
                     if(module.slice(0, searchQuery.length).indexOf(searchQuery) !== -1){
                         setResult(prevResult => {
