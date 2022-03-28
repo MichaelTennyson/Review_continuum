@@ -72,7 +72,8 @@ function Login() {
                   <div className='registration'>
                       <h1>Registration</h1>
                       <input
-                        placeholder="enter your Email address"
+                        placeholder="enter your Email address e.g C12345678@mytudublin.ie"
+                        type="email"
                         className='nameUserInput'
                         onChange={(event) => {
                             setEmail(event.target.value);
@@ -91,11 +92,11 @@ function Login() {
 
                   <div className="login">
                       <h1>Login</h1>
-                      <input className='nameUserInput' placeholder="email" onChange={(event) => {
+                      <input className='nameUserInput' placeholder=" enter your email" onChange={(event) => {
                           setloginEmail(event.target.value);
                       } } />
 
-                      <input type="password" className='nameUserInput' placeholder="password" onChange={(event) => {
+                      <input type="password" className='nameUserInput' placeholder="enter your password" onChange={(event) => {
                           setloginPassword(event.target.value);
                       } } />
                   

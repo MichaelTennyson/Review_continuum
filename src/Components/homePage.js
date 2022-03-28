@@ -2,8 +2,9 @@ import React from 'react';
 import Header from './header.js';
 import Footer from './footer.js';
 import './homePage_index.css';
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import { getDatabase, ref, onValue} from "firebase/database";
+import { auth } from '../firebase-config';
 
 import {
     signOut
