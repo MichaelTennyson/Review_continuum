@@ -11,6 +11,7 @@ import ModuleReviewForm from "./Components/ModuleReviewForm.js";
 import CommentBox from "./Components/commentBox.js";
 import HomePage from "./Components/homePage.js";
 import Review from "./Components/Review";
+import Chat from "./Components/chat";
 
 
 ReactDOM.render(
@@ -26,6 +27,7 @@ ReactDOM.render(
         <Route exact path='/account' element={<Account />} />
         <Route exact path='/searchPage' element={<SearchPage />} />
         <Route exact path='/review' element={<Review />} />
+        <Route exact path='/chat' element={<Chat />} />
       </Routes>
     </Router>
   </React.StrictMode>

@@ -38,6 +38,11 @@ function Header()
                             Review
                         </NavLink>
                     </li>
+                    <li className="headerItem">
+                        <NavLink className="nav-link" to="/chat">
+                           Chat
+                        </NavLink>
+                    </li>
 
                 </ul>
             </div></>

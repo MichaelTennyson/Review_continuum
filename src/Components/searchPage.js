@@ -5,6 +5,7 @@ import './searchPage_index.css';
 import {Button} from "react-bootstrap";
 
 function SearchPage(){
+    let navigate = useNavigate();
 
     const [search, setSearch] = useState('');
     const [result, setResult] = useState([]);
@@ -49,7 +50,7 @@ function SearchPage(){
                 <div className='searchBack'>
                     {result.map((result, index) => (
                         <a href="/review" key={index} >
-                           <div className='searchEntry'>
+                           <div className='searchEntry' onClick={navigate('/modulePage')}>
                                {result}
                             </div> 
 

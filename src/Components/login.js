@@ -107,7 +107,7 @@ function Login()
                   <h4> User Logged In: </h4>
                     {user?.email}
 
-                  <button onClick={logout}> Sign Out </button>
+                  <Button onClick={logout} className='Createuserbutton'> Sign Out </Button>
               </Form>
           </Card.Body>
       </Card>

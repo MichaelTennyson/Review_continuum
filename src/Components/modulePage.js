@@ -4,9 +4,9 @@ import Footer from './footer.js'
 import './review_index.css';
 import Comment from './commentBox.js';
 import {db} from '../firebase-config';
+import { getDatabase, ref, child, get } from "firebase/database";
 
 function ModulePage(){
-
     return(
         <>
         <Header />

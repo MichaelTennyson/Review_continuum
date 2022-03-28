@@ -10,7 +10,7 @@ import { auth } from "./firebase-config";
 const userAuthContext = createContext();
 
 
-//user auth context provider establishes suthentication across the application
+//the user auth context provider holds all the registration functions that are then export to the login script
 export function UserAuthContextProvider({ children }) {
   const [user, setUser] = useState({});
 
