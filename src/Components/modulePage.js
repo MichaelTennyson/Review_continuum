@@ -3,20 +3,31 @@ import Header from './header.js';
 import Footer from './footer.js'
 import './review_index.css';
 import Comment from './commentBox.js';
-import {db} from '../firebase-config';
 import { getDatabase, ref, child, get } from "firebase/database";
 
 function ModulePage(){
-    return(
-        <>
-        <Header />
-        <div>
-            
-        </div>
-        <Comment />
-        <Footer />
-        </>
-    )
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, `modules/${userId}`)).then((snapshot) => {
+        if (snapshot.exists()) {
+            console.log(snapshot.val());
+            return(
+                <>
+                <Header />
+                <h1>module page</h1>
+                <p> here is a list of the modules that you can review</p>
+                <div>
+                
+                </div>
+                <Comment />
+                <Footer />
+                </>
+            );
+        } else {
+            console.log("No data available");
+        }
+        }).catch((error) => {
+        console.error(error);
+        });
 
 }
 
