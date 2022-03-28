@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import './login_index.css';
-
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
@@ -10,8 +9,8 @@ import {
 import { useNavigate} from "react-router-dom";
 import { Form, Button, Card} from "react-bootstrap";
 import { auth } from '../firebase-config';
-function Login() 
-{
+
+function Login() {
   let navigate = useNavigate();
 
    //use states that pass data to firestore database
