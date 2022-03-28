@@ -3,6 +3,8 @@ import './chat_style.css';
 import { auth, db, analytics, app } from '../firebase-config';
 import firebase from 'firebase/app';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+import Header from './header.js';
+import Footer from './footer.js';
 
 function Chat() {
   const dummy = useRef();
