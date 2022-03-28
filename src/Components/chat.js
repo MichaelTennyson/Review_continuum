@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
 import './chat_style.css';
-import { auth, db, analytics } from '../firebase-config';
+import { auth, db, analytics, app } from '../firebase-config';
 import firebase from 'firebase/app';
+import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 function Chat() {
   const dummy = useRef();
@@ -23,7 +24,7 @@ function Chat() {
 
     await messagesRef.add({
       text: formValue,
-      createdAt: firebase.db.FieldValue.serverTimestamp(),
+      createdAt: app.db.FieldValue.serverTimestamp(),
       uid,
       photoURL
     })
@@ -46,7 +47,7 @@ function Chat() {
 
       <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
 
-      <button type="submit" disabled={!formValue}>🕊️</button>
+      <button type="submit" disabled={!formValue}>send</button>
 
     </form>
     <Footer />
