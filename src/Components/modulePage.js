@@ -2,7 +2,6 @@ import React from 'react';
 import Header from './header.js';
 import Footer from './footer.js'
 import './review_index.css';
-import Comment from './commentBox.js';
 import { getDatabase, ref, child, get } from "firebase/database";
 
 function ModulePage(){
@@ -15,10 +14,9 @@ function ModulePage(){
                 <Header />
                 <h1>module page</h1>
                 <p> here is a list of the modules that you can review</p>
-                <div>
-                
-                </div>
-                <Comment />
+                <Card className="moduleCard">
+                    {snapshot.val()}
+                </Card>
                 <Footer />
                 </>
             );
