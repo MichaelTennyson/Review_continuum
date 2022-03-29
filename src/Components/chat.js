@@ -1,19 +1,70 @@
 import React, { useRef, useState } from 'react';
-import './chat_style.css';
-import { auth, db, analytics, app } from '../firebase-config';
-import firebase from 'firebase/app';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
-import Header from './header.js';
-import Footer from './footer.js';
+import './App.css';
 
-function Chat() {
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
+import 'firebase/analytics';
+
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useCollectionData } from 'react-firebase-hooks/firestore';
+
+firebase.initializeApp({
+  // your config
+})
+
+const auth = firebase.auth();
+const firestore = firebase.firestore();
+const analytics = firebase.analytics();
+
+
+function App() {
+
+  const [user] = useAuthState(auth);
+
+  return (
+    <div className="App">
+      <header>
+        <h1>⚛️🔥💬</h1>
+        <SignOut />
+      </header>
+
+      <section>
+        {user ? <ChatRoom /> : <SignIn />}
+      </section>
+
+    </div>
+  );
+}
+
+function SignIn() {
+
+  const signInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider);
+  }
+
+  return (
+    <>
+      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
+      <p>Do not violate the community guidelines or you will be banned for life!</p>
+    </>
+  )
+
+}
+
+function SignOut() {
+  return auth.currentUser && (
+    <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
+  )
+}
+
+
+function ChatRoom() {
   const dummy = useRef();
-  //referencing the message collection
-  const messagesRef = db.collection('messages');
-  //query limited at 25 seconds
+  const messagesRef = firestore.collection('messages');
   const query = messagesRef.orderBy('createdAt').limit(25);
 
-  //variable takes in the message
   const [messages] = useCollectionData(query, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
@@ -26,7 +77,7 @@ function Chat() {
 
     await messagesRef.add({
       text: formValue,
-      createdAt: app.db.FieldValue.serverTimestamp(),
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
       photoURL
     })
@@ -36,7 +87,6 @@ function Chat() {
   }
 
   return (<>
-    <Header />
     <main>
 
       {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
@@ -49,10 +99,9 @@ function Chat() {
 
       <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
 
-      <button type="submit" disabled={!formValue}>send</button>
+      <button type="submit" disabled={!formValue}>🕊️</button>
 
     </form>
-    <Footer />
   </>)
 }
 
@@ -71,4 +120,4 @@ function ChatMessage(props) {
 }
 
 
-export default Chat;
+export default App;

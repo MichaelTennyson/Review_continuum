@@ -21,12 +21,12 @@
   
   .registration{
     align-content: center;
-    margin-right: 400px;
     justify-content: center;
+    margin-right: 400px;
   }
   
   .login{
-    justify-self: unset;
+    align-content:left;
   }
   
   .name-wrap{
