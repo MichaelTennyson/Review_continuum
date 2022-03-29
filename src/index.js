@@ -5,7 +5,6 @@ import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from "./Components/login.js";
 import Account from "./Components/account.js";
-import Logout from "./Components/logout.js";
 import SearchPage from "./Components/searchPage.js";
 import ModuleReviewForm from "./Components/ModuleReviewForm.js";
 import CommentBox from "./Components/commentBox.js";

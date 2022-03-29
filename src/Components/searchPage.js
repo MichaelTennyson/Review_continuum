@@ -3,6 +3,7 @@ import Header from './header.js';
 import Footer from './footer.js';
 import './searchPage_index.css';
 import {Button} from "react-bootstrap";
+import { useNavigate} from "react-router-dom";
 
 function SearchPage(){
     let navigate = useNavigate();
