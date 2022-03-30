@@ -1,23 +1,20 @@
 import React, { useRef, useState } from 'react';
 import './App.css';
 
-import app from '../firebase-config';
+import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
+import {db, app, auth} from '../firebase-config';
+
 
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-
-
-const auth = app.auth();
-const firestore = app.firestore();
-const analytics = app.analytics();
 
 
 
 function ChatRoom() {
   const dummy = useRef();
-  const messagesRef = firestore.collection('messages');
+  const messagesRef = db.collection('messages');
   const query = messagesRef.orderBy('createdAt').limit(25);
 
   const [messages] = useCollectionData(query, { idField: 'id' });
@@ -32,7 +29,7 @@ function ChatRoom() {
 
     await messagesRef.add({
       text: formValue,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      createdAt: app.db.FieldValue.serverTimestamp(),
       uid,
       photoURL
     })
@@ -54,7 +51,7 @@ function ChatRoom() {
 
       <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
 
-      <button type="submit" disabled={!formValue}>SEnd</button>
+      <button type="submit" disabled={!formValue}>🕊️</button>
 
     </form>
   </>)
@@ -75,4 +72,4 @@ function ChatMessage(props) {
 }
 
 
-export default App;
+export default ChatRoom;

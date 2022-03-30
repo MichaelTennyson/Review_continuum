@@ -34,8 +34,8 @@ function Header()
                         </NavLink>
                     </li>
                     <li className="headerItem">
-                        <NavLink className="nav-link" to="/review">
-                            Review
+                        <NavLink className="nav-link" to="/modulePage">
+                            Module page
                         </NavLink>
                     </li>
                     <li className="headerItem">
