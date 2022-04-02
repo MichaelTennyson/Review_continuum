@@ -23,6 +23,7 @@ function Footer(){
             <FooterLink href="#">Aim</FooterLink>
             <FooterLink href="#">Vision</FooterLink>
             <FooterLink href="#">Testimonials</FooterLink>
+            <FooterLink href="#">Future plans</FooterLink>
           </Column>
           <Column>
             <Heading>Services</Heading>

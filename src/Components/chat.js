@@ -1,69 +1,36 @@
 import React, { useRef, useState } from 'react';
-import './App.css';
+import './chat_style.css';
 
-import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
+import Header from './header.js';
+import Footer from './footer.js';
 
-import { useAuthState } from 'react-firebase-hooks/auth';
+
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import { auth, db, analytics  } from '../firebase-config';
-
-firebase.initializeApp({
-  // your config
-})
-
-const auth = firebase.auth();
-const firestore = firebase.firestore();
-const analytics = firebase.analytics();
+import { auth, db, app  } from '../firebase-config';
 
 
 function Chat() {
 
-  const [user] = useAuthState(auth);
-
   return (
-    <div className="App">
-      <header>
-        <h1>⚛️🔥💬</h1>
-        <SignOut />
-      </header>
+    <div className="Chat">
 
       <section>
-        {user ? <ChatRoom /> : <SignIn />}
+        <Header />
+        <ChatRoom />
+        <Footer />
       </section>
 
     </div>
   );
 }
 
-function SignIn() {
-
-  const signInWithGoogle = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider);
-  }
-
-  return (
-    <>
-      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Do not violate the community guidelines or you will be banned for life!</p>
-    </>
-  )
-
-}
-
-function SignOut() {
-  return auth.currentUser && (
-    <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
-  )
-}
-
 
 function ChatRoom() {
   const dummy = useRef();
-  const messagesRef = firestore.collection('messages');
+  const messagesRef = db('messages');
   const query = messagesRef.orderBy('createdAt').limit(25);
 
   const [messages] = useCollectionData(query, { idField: 'id' });
@@ -74,13 +41,12 @@ function ChatRoom() {
   const sendMessage = async (e) => {
     e.preventDefault();
 
-    const { uid, photoURL } = auth.currentUser;
+    const { uid} = auth.currentUser;
 
     await messagesRef.add({
       text: formValue,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      uid,
-      photoURL
+      createdAt: app.db.FieldValue.serverTimestamp(),
+      uid
     })
 
     setFormValue('');
@@ -108,7 +74,7 @@ function ChatRoom() {
 
 
 function ChatMessage(props) {
-  const { text, uid, photoURL } = props.message;
+  const { text, uid } = props.message;
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 

@@ -22,7 +22,7 @@ const firebaseConfig = {
   export const db = getFirestore(app);
   export const auth = getAuth(app);
   export const analytics = getAnalytics(app);
-  export const userid = auth.currentUser.uid
+  
 
 
 
