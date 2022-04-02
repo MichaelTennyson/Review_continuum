@@ -1,20 +1,69 @@
 import React, { useRef, useState } from 'react';
-import './chat_style.css';
+import './App.css';
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
-import {db, app, auth} from '../firebase-config';
 
-
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+import { auth, db, analytics  } from '../firebase-config';
 
+firebase.initializeApp({
+  // your config
+})
+
+const auth = firebase.auth();
+const firestore = firebase.firestore();
+const analytics = firebase.analytics();
+
+
+function Chat() {
+
+  const [user] = useAuthState(auth);
+
+  return (
+    <div className="App">
+      <header>
+        <h1>⚛️🔥💬</h1>
+        <SignOut />
+      </header>
+
+      <section>
+        {user ? <ChatRoom /> : <SignIn />}
+      </section>
+
+    </div>
+  );
+}
+
+function SignIn() {
+
+  const signInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider);
+  }
+
+  return (
+    <>
+      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
+      <p>Do not violate the community guidelines or you will be banned for life!</p>
+    </>
+  )
+
+}
+
+function SignOut() {
+  return auth.currentUser && (
+    <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
+  )
+}
 
 
 function ChatRoom() {
   const dummy = useRef();
-  const messagesRef = db.collection('messages');
+  const messagesRef = firestore.collection('messages');
   const query = messagesRef.orderBy('createdAt').limit(25);
 
   const [messages] = useCollectionData(query, { idField: 'id' });
@@ -29,7 +78,7 @@ function ChatRoom() {
 
     await messagesRef.add({
       text: formValue,
-      createdAt: app.db.FieldValue.serverTimestamp(),
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
       photoURL
     })
@@ -72,4 +121,4 @@ function ChatMessage(props) {
 }
 
 
-export default ChatRoom;
+export default Chat;
