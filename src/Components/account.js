@@ -2,8 +2,10 @@ import React from "react";
 import Header from './header.js';
 import Footer from './footer.js'
 import './account_index.css';
-
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { auth } from '../firebase-config';
 function Account(){
+    const [user] = useAuthState(auth);
     return(
             <>
             <Header />

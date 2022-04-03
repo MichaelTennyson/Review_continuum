@@ -27,13 +27,13 @@ function ModulePage(){
                     <p>module subject</p>
                 </div>
                 <Card className="module_card">
-                    {snapshot.val().module_name}
-                    {snapshot.val().module_code}
-                    {snapshot.val().ECTS}
-                    {snapshot.val().module_length}
-                    {snapshot.val().module_description}
-                    {snapshot.val().module_school}
-                    {snapshot.val().module_subject}
+                    <p>{snapshot.val().module_name}</p>
+                    <p>{snapshot.val().module_code}</p>
+                    <p>{snapshot.val().ECTS}</p>
+                    <p>{snapshot.val().module_length}</p>
+                    <p>{snapshot.val().module_description}</p>
+                    <p>{snapshot.val().module_school}</p>
+                    <p>{snapshot.val().module_subject}</p>
                     <Button className="moduleselection" onClick={navigate("/ModuleReviewForm")}> </Button>
                 </Card>
             </Card>

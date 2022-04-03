@@ -1,6 +1,7 @@
 .Heading{
     text-align: start;
     font-size: large;
+    text-size-adjust: large;
     font-family: 'Courier New', Courier, monospace;
   
   }
@@ -15,6 +16,8 @@
     background-color: blue;
     border: 1px solid blue;
     justify-content: center;
+    background-size: large;
+
   }
 
   .HomePage{

@@ -3,7 +3,7 @@ import Header from './header.js';
 import Footer from './footer.js';
 import './homePage_index.css';
 import { Card, Button } from "react-bootstrap";
-import { getDatabase, ref, onValue} from "firebase/database";
+import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '../firebase-config';
 
 import {
@@ -12,6 +12,7 @@ import {
 
 function HomePage(){ 
     //logout method
+  const [user] = useAuthState(auth);
   const logout = async () => {
     await signOut(auth);
   };
@@ -23,6 +24,7 @@ function HomePage(){
         <Card className='homeCard'>
         <div className="HomePage">
             <h1 className='Heading'>Welcome to Review Continuum!!</h1>
+            <p>{user?.email}</p>
             <p className='paragraph1'> on this website, you can search for modules, review modules, comment under modules and also chat with others on the modules</p>
             <p>there is a logout button below that you can press</p>
             <Button className="button" onClick={logout}> Sign Out </Button>
