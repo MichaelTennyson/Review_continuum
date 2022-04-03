@@ -12,6 +12,7 @@ import HomePage from "./Components/homePage.js";
 import Review from "./Components/Review";
 import Chat from "./Components/chat";
 import ModulePage from "./Components/modulePage.js";
+import App from "./App.js"
 
 
 ReactDOM.render(
@@ -20,6 +21,7 @@ ReactDOM.render(
     <Router>
       <Routes>
         <Route exact path='/login' element={<Login />} />
+        <Route exact path='/' element={<App />} />
         <Route exact path='/ModuleReviewForm' element={<ModuleReviewForm />} />
         <Route exact path='/modulePage' element={<ModulePage />} />
         <Route exact path='/commentBox' element={<CommentBox />} />
