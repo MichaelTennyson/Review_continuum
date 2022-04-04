@@ -16,7 +16,7 @@ function ModulePage(){
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {
             // console log to test if data if being fetched
-            console.log(doc.id, " => ", doc.data());
+            
         });
     fetchData();
         return(

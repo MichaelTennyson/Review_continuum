@@ -31,7 +31,7 @@ function SearchPage(){
                 }
                 //error checking
             }).catch(error =>{
-                console.log(error);
+                
             })
         }else{
             //if the value of the search result is not greater than 0
