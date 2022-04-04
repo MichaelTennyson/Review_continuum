@@ -10,6 +10,7 @@
     border: none;
     display: flex;
   }
+
   
   
   .headerItem{
@@ -23,9 +24,11 @@
     padding: 5px 5px;
     text-decoration: none;
     width: flex;
-    height: 40px;
+    height: 50px;
 
   }
+
+  
   
   .headerItem:hover {
     background-color: yellow;

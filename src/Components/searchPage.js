@@ -13,7 +13,7 @@ function SearchPage(){
     // the following use effect uses the fetch API that gets the details
     useEffect(() =>{
         if(search.length > 0){
-            fetch('https://review-continuum-default-rtdb.europe-west1.firebasedatabase.app/modules.json').then(
+            fetch('https://review-continuum-default-rtdb.europe-west1.firebasedatabase.app/Modules.json').then(
                 response => response.json
             ).then(responseData => {
                 //search query set to lowercase

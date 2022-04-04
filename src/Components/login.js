@@ -49,9 +49,6 @@ function Login() {
         loginEmail,
         loginPassword
       );
-      if( loginPassword.length() < 4){
-        Alert("Warning: your password is too weak, enter another one")
-      }
       navigate("/homePage")
       console.log(user);
     } catch (error) {
