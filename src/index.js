@@ -12,6 +12,7 @@ import HomePage from "./Components/homePage.js";
 import Review from "./Components/Review";
 import Chat from "./Components/chat";
 import ModulePage from "./Components/modulePage.js";
+import PastReviews from "./Components//pastReviews.js";
 import App from "./App.js"
 
 
@@ -30,6 +31,7 @@ ReactDOM.render(
         <Route exact path='/searchPage' element={<SearchPage />} />
         <Route exact path='/review' element={<Review />} />
         <Route exact path='/chat' element={<Chat />} />
+        <Route exact path='/pastReviews' element={<PastReviews />} />
       </Routes>
     </Router>
   </React.StrictMode>
