@@ -7,9 +7,11 @@ function Header()
      
         return(
             <>
+            
             <div className="headerTitle">
                 <h1>Review continuum. A module review web application</h1>
              </div>
+             
             <div className='Headerdiv'>
                 <ul className='Header'>
                     <li className='headerItem'>

@@ -12,11 +12,11 @@ function Account(){
             <div className="account">
              <h1 className="accountUsername">{user?.email}</h1>
              <span>Student</span>
-             <div className="module_reviews_done">
-                  <p clasname="user_modules_completed_names"> Modules you have reviewed</p>
-                   <div className="module1"> DevOps</div>
-                   <div className="module2"> Databases 2</div>
-             </div>
+                <div className="module_reviews_done">
+                    <p clasname="accountUsername"> Modules you have reviewed</p>
+                    <div className="module1"> DevOps</div>
+                    <div className="module2"> Databases 2</div>
+                </div>
             </div>
             <Footer />
         </>

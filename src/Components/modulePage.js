@@ -11,12 +11,13 @@ function ModulePage(){
     const navigate = useNavigate();
     const dbRef = ref(getDatabase());
     get(child(dbRef, "Modules/")).then((snapshot) => {
-        eturn(
+        return(
             <>
             <Header />
             <h1>Welcome to the module page</h1>
             <p> on this page, yopu will see the modules that you can currently upload reviews on</p>
             <Card className="module_card">
+                <h2>Module list</h2>
                 <p>{snapshot.val()}</p>
                 <Button className="moduleselection" onClick={navigate("/ModuleReviewForm")}> </Button>
             </Card>

@@ -9,6 +9,7 @@ import {
 import { useNavigate} from "react-router-dom";
 import { Form, Button, Card} from "react-bootstrap";
 import { auth } from '../firebase-config';
+import { Alert } from 'bootstrap';
 
 function Login() {
   let navigate = useNavigate();
@@ -48,6 +49,9 @@ function Login() {
         loginEmail,
         loginPassword
       );
+      if( loginPassword.length() < 4){
+        Alert("Warning: your password is too weak, enter another one")
+      }
       navigate("/homePage")
       console.log(user);
     } catch (error) {
@@ -66,10 +70,11 @@ function Login() {
   //onchange events hook the input made by the user and passes it to the use state
   return (
     <>
+    <body>
     <Card className='login_card'>
           <Card.Body className='body'>
+              <Form className="Login">
               <h1 className='title'>Review Continuum</h1>
-              <Form className="App">
                   <div className='registration'>
                       <h1>Registration</h1>
                       <input
@@ -112,6 +117,7 @@ function Login() {
               </Form>
           </Card.Body>
       </Card>
+      </body>
       </>
   
     

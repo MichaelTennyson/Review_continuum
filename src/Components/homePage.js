@@ -5,6 +5,7 @@ import './homePage_index.css';
 import { Card, Button } from "react-bootstrap";
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '../firebase-config';
+import student from './student.jpg';
 
 import {
     signOut

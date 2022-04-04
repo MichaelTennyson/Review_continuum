@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
 .account{
     align-content: center;
     justify-content: flex;
@@ -25,7 +26,6 @@
 
 .user_modules_completed_names{
     align-content: center;
-    font-size: large;
 }
 
 .module1{
