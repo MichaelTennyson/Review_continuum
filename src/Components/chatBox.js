@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { db, auth } from '../firebase-config.js'
 import Message from './message'
+import Header from './header.js';
+import Footer from './footer.js';
 
 function ChatBox() {
     const scroll = useRef()
@@ -11,7 +13,9 @@ function ChatBox() {
         })
     }, [])
     return (
-        <div>
+       <>
+       <Header />
+       <div>
             <div className="msgs">
                 {messages.map(({ id, text, photoURL, uid }) => (
                     <div>
@@ -25,6 +29,8 @@ function ChatBox() {
             <Message scroll={scroll} />
             <div ref={scroll}></div>
         </div>
+        <Footer />
+        </> 
     )
 }
 

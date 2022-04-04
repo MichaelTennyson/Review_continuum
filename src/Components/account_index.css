@@ -2,8 +2,8 @@
     align-content: center;
     justify-content: flex;
     border: 1px black;
-    width: 250px;
-    height: 250px;
+    width: 600px;
+    height: 600px;
     margin-left: 40px;
 }
 
@@ -11,6 +11,7 @@
     text-align:center;
     justify-content: flex;
     font-size: large;
+    text-emphasis-color: black;
     font-family: 'Courier New', Courier, monospace;
 
 }
@@ -24,7 +25,6 @@
 
 .user_modules_completed_names{
     align-content: center;
-    justify-content: flex;
     font-size: large;
 }
 
