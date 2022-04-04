@@ -35,7 +35,7 @@ function Login() {
         newEmail,
         newPassword
       );
-      console.log(user);
+      
     } catch (error) {
       console.log(error.message);
     }
@@ -50,7 +50,7 @@ function Login() {
         loginPassword
       );
       navigate("/homePage")
-      console.log(user);
+      
     } catch (error) {
       console.log(error.message);
     }
