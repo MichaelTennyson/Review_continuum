@@ -6,6 +6,7 @@ import Footer from './footer.js';
 
 function ChatBox() {
     const scroll = useRef()
+    const q = query(collection(db, "messages"));
     const [messages, setMessages] = useState([])
     useEffect(() => {
         db.collection('messages').orderBy('createdAt').limit(50).onSnapshot(snapshot => {

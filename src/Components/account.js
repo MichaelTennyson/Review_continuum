@@ -9,13 +9,27 @@ function Account(){
     return(
             <>
             <Header />
-            <div className="account">
-             <h1 className="accountUsername">{user?.email}</h1>
-             <span>Student</span>
-                <div className="module_reviews_done">
-                    <p clasname="accountUsername"> Modules you have reviewed</p>
-                    <div className="module1"> DevOps</div>
-                    <div className="module2"> Databases 2</div>
+            <div class="container mt-5">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-7">
+                        <div class="card p-3 py-4">
+                            <div class="text-center">  </div>
+                            <div class="text-center mt-3"> <span class="bg-secondary p-1 px-4 rounded text-white">User account</span>
+                                <h5 class="mt-2 mb-0">{user?.email}</h5> <span>Student</span>
+                                <div class="px-4 mt-1">
+                                    <p class="fonts"> Fourth Year computer science student </p>
+                                </div>
+                                <ul class="social-list">
+                                    <li><i class="fa fa-facebook"> Facebook</i></li>
+                                    <li><i class="fa fa-dribbble"></i> Dribble</li>
+                                    <li><i class="fa fa-instagram"> Instagram</i></li>
+                                    <li><i class="fa fa-linkedin"> LinkedIn</i></li>
+                                    <li><i class="fa fa-google"> Google</i></li>
+                                </ul>
+                                <div class="buttons"> <button class="btn btn-outline-primary px-4">Message</button> <button class="btn btn-primary px-4 ms-3">Contact</button> </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <Footer />
