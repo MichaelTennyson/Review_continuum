@@ -16,7 +16,21 @@ function ModulePage(){
   const getData = () => {
     const data = ref(realtimeDB, 'Modules') 
     onValue(data, (snapshot) => {
-      console.log([snapshot.val()])
+        return(
+            <>
+            <Header />
+            <h1>Welcome to the module page</h1>
+            <p> on this page, yopu will see the modules that you can currently upload reviews on</p>
+            <Card className="module_card">
+                <h2>Module list</h2>
+                <p>{snapshot.val()}</p>
+                <Button className="moduleselection" onClick={navigate("/ModuleReviewForm")}> </Button>
+            </Card>
+            <div className="moduleselection"></div>
+    
+            <Footer />
+            </>
+        );
     })
   }
 
@@ -31,24 +45,7 @@ function ModulePage(){
     getData();
   }, [initialize])
 
-    return(
-        <>
-        <Header />
-        <h1>Welcome to the module page</h1>
-        <p> on this page, yopu will see the modules that you can currently upload reviews on</p>
-        <Card className="module_card">
-            <h2>Module list</h2>
-            <p>Security</p>
-            <Button className="moduleselection" onClick={navigate("/ModuleReviewForm")}> </Button>
-        </Card>
-        <div className="moduleselection"></div>
-
-        <Footer />
-        </>
-    );
-
-      
-
+    
 
 }
 export default ModulePage;

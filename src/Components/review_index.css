@@ -52,3 +52,11 @@
   background-color:white;
   text-align: center;
 }
+
+.moduleselection{
+  justify-content: center;
+   background-color: blue;
+   border: 1px solid blue;
+   width: 100px;
+   height: 100px;
+}
