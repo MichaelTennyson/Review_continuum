@@ -106,11 +106,6 @@ function Login() {
                       <Button onClick={login} className='Createuserbutton'  >Login </Button>
                     
                   </div>
-
-                  <h4> User Logged In: </h4>
-                    {user?.email}
-
-                  <Button onClick={logout} className='Createuserbutton'> Sign Out </Button>
               </Form>
           </Card.Body>
       </Card>
