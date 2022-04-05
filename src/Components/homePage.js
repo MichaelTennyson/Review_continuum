@@ -5,15 +5,21 @@ import './homePage_index.css';
 import { Card, Button } from "react-bootstrap";
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '../firebase-config';
-import student from './student.jpg';
+import { useNavigate} from "react-router-dom";
 
 import {
     signOut
   } from "firebase/auth";
 
 function HomePage(){ 
-    //logout method
+  let navigate = useNavigate();
   const [user] = useAuthState(auth);
+
+  if(!user){
+    navigate("/");
+  }
+
+  //logout method
   const logout = async () => {
     await signOut(auth);
   };

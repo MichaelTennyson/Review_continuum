@@ -1,4 +1,5 @@
-import {  initializeApp, getApp } from 'firebase/app';
+//imported functions
+import {  initializeApp } from 'firebase/app';
 import { getFirestore } from "firebase/firestore";
 import { getDatabase } from "firebase/database";
 import { getAnalytics } from "firebase/analytics";
@@ -8,6 +9,7 @@ import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
 require("dotenv").config();
 
+// firebase configuration detals
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_TOKEN,
     authDomain: process.env.REACT_APP_AUTH_DOMAIN,
@@ -21,7 +23,7 @@ const firebaseConfig = {
 
   export const app = initializeApp(firebaseConfig);
   export const db = getFirestore(app);
-  export const data = getDatabase(app);
+  export const realtimeDB = getDatabase(app);
   export const auth = getAuth(app);
   export const analytics = getAnalytics(app);
   

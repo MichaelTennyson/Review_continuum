@@ -4,16 +4,22 @@ import Footer from './footer.js';
 import './searchPage_index.css';
 import {Button} from "react-bootstrap";
 import { useNavigate} from "react-router-dom";
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { auth } from '../firebase-config';
 
 function SearchPage(){
     let navigate = useNavigate();
+    const [user] = useAuthState(auth);
+    if(!user){
+        navigate("/");
+    }
 
     const [search, setSearch] = useState('');
     const [result, setResult] = useState([]);
     // the following use effect uses the fetch API that gets the details
     useEffect(() =>{
         if(search.length > 0){
-            fetch('https://review-continuum-default-rtdb.europe-west1.firebasedatabase.app/Modules.json').then(
+            fetch('https://review-continuum-default-rtdb.europe-west1.firebasedatabase.app/Modules').then(
                 response => response.json
             ).then(responseData => {
                 //search query set to lowercase

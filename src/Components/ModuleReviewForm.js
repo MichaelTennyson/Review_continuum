@@ -5,8 +5,16 @@ import './review_index.css';
 import {db} from '../firebase-config';
 import { collection, addDoc, getDocs } from "firebase/firestore"; 
 import { Form, Button} from "react-bootstrap";
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { auth } from '../firebase-config';
+import { useNavigate} from "react-router-dom";
 
 function ModuleReviewForm(){
+  let navigate = useNavigate();
+  const [user] = useAuthState(auth);
+  if(!user){
+    navigate("/");
+  }
 
     const [q1, setq1] = useState("");
     const [q2, setq2] = useState("");
