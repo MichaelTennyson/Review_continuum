@@ -26,13 +26,14 @@ function PastReviews(){
         getReview();
     }, 
     []);
-      
+
      //the following code displays the past reviews details from the firebase dataabase
      return review && review.map((review) => {    
+    
      return(
      <>
-     <Header />
-     <Card>
+     
+     <Card className="Review_card">
      {""}
      <label className='reviewQ'>General description of your experience with the module</label>
      <p>{review.q1}</p>
@@ -58,7 +59,7 @@ function PastReviews(){
      <label className='reviewQ'>give some extra feedback</label>
      <p>{review.q8}</p>
     </Card>
-    <Footer />
+    
     </>
      );
 

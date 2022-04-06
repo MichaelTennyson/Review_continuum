@@ -32,7 +32,6 @@ function ModulePage(){
                 <Button className="moduleselection" onClick={navigate("/ModuleReviewForm")}> </Button>
             </Card>
             <div className="moduleselection"></div>
-    
             <Footer />
             </>
         );
