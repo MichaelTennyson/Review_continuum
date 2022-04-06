@@ -4,14 +4,19 @@ import './review_index.css';
 import { Card, Button } from "react-bootstrap";
 import React, {useEffect, initialize} from 'react';
 import { useNavigate} from "react-router-dom";
-import {realtimeDB} from '../firebase-config';
+import {realtimeDB, auth } from '../firebase-config';
 import { getDatabase, ref, onValue } from 'firebase/database'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { auth } from '../firebase-config';
+import { render } from '@testing-library/react';
 
 
 function ModulePage(){
     let navigate = useNavigate();
+    //if statement that checks if the page is being accessed by the user
+    const [user] = useAuthState(auth);
+    if(!user){
+        navigate("/");
+    }
    //function to get the data
   const getData = () => {
     const data = ref(realtimeDB, 'Modules') 
@@ -33,13 +38,6 @@ function ModulePage(){
         );
     })
   }
-
-  //if statement that checks if the page is being accessed by the user
-  const [user] = useAuthState(auth);
-  if(!user){
-    navigate("/");
-  }
-
   initialize = true
   useEffect(() => {
     getData();

@@ -67,7 +67,7 @@ function Login() {
   //onchange events hook the input made by the user and passes it to the use state
   return (
     <>
-    <body>
+    <body className="login_body">
     <Card className='login_card'>
           <Card.Body className='body'>
               <Form className="Login">

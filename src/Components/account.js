@@ -4,8 +4,16 @@ import Footer from './footer.js'
 import './account_index.css';
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '../firebase-config';
+import { useNavigate} from "react-router-dom";
+
 function Account(){
     const [user] = useAuthState(auth);
+    let navigate = useNavigate();
+    //user validation if statement
+    if(!user){
+        navigate("/");
+      }
+      //return method
     return(
             <>
             <Header />

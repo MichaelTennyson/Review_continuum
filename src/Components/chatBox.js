@@ -3,6 +3,7 @@ import { db, auth } from '../firebase-config.js'
 import Message from './message'
 import Header from './header.js';
 import Footer from './footer.js';
+import { getFirestore, collection, query, where, getDocs } from "firebase/firestore";
 
 function ChatBox() {
     const scroll = useRef()
