@@ -32,6 +32,7 @@ function ModuleReviewForm(){
     await addDoc(reviewCollectionRef, {q1: q1, q2: q2, q3: q3, q4: q4, q5: q5, q6: q6, q7: q7,q8: q8});
   };
 
+  //use effect hooks
   useEffect(() => {
 
     const getReview = async () =>{

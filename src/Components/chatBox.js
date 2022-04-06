@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { db, auth } from '../firebase-config.js'
-import Message from './message'
+import Message from './message.js'
 import Header from './header.js';
 import Footer from './footer.js';
 import {  collection, query } from "firebase/firestore";
