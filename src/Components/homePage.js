@@ -36,8 +36,6 @@ function HomePage(){
             <p>there is a logout button below that you can press yo logout.</p>
             <Button className="button" onClick={logout}> Sign Out </Button>
             <p>Here are some recent reviews.</p>
-            
-
         </div>
         </Card>
         <Footer />

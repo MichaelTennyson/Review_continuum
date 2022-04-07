@@ -2,12 +2,12 @@ import Header from './header.js';
 import Footer from './footer.js'
 import './review_index.css';
 import { Card, Button } from "react-bootstrap";
-import React, {useEffect, initialize} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useNavigate} from "react-router-dom";
-import {realtimeDB, auth } from '../firebase-config';
-import { getDatabase, ref, onValue } from 'firebase/database'
+import {realtimeDB, auth, app } from '../firebase-config';
+import {  ref, onValue } from 'firebase/database'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { render } from '@testing-library/react';
+
 
 
 function ModulePage(){
@@ -18,31 +18,38 @@ function ModulePage(){
         navigate("/");
     }
    //function to get the data
-  const getData = () => {
-    const data = ref(realtimeDB, 'Modules') 
-    onValue(data, (snapshot) => {
-        return(
-            <>
-            <Header />
-            <h1>Welcome to the module page</h1>
-            <p> on this page, yopu will see the modules that you can currently upload reviews on</p>
-            <Card className="module_card">
-                <h2>Module list</h2>
-                <p>{snapshot.val()}</p>
-                <Button className="moduleselection" onClick={navigate("/ModuleReviewForm")}> </Button>
-            </Card>
-            <div className="moduleselection"></div>
-            <Footer />
-            </>
-        );
-    })
-  }
-  initialize = true
+   const [moduleList, setModuleList] = useState();
+
   useEffect(() => {
-    getData();
-  }, [initialize])
+    const moduleRef = app.database().ref('/Modules');
+    moduleRef.on('value', (snapshot) => {
+      const modules = snapshot.val();
+      const moduleList= [];
+      for (let id in modules) {
+        moduleList.push({ id, ...modules[id] });
+      }
+      setModuleList(moduleList);
+    });
+  }, []);
+  return(
+    <>
+    <Header />
+    <h1>Welcome to the module page</h1>
+    <p> on this page, you will see the modules that you can currently upload reviews on</p>
+
+    <Card className="module_card">
+        <h2>Module list</h2>
+        <div>
+          {moduleList? moduleList.map((modules, index) => <p modules={modules} key={index} />): ''}
+        </div>
+    </Card>
+    <div className="moduleselection"></div>
+    <Footer />
+    </>
+);
 
     
 
 }
 export default ModulePage;
+

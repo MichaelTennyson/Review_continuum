@@ -7,6 +7,7 @@ import { auth } from '../firebase-config';
 import { useNavigate} from "react-router-dom";
 
 function Account(){
+    //variable that takes in the current user
     const [user] = useAuthState(auth);
     let navigate = useNavigate();
     //user validation if statement

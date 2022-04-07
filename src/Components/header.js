@@ -50,6 +50,11 @@ function Header()
                            View past reviews
                         </NavLink>
                     </li>
+                    <li className="headerItem">
+                        <NavLink className="nav-link" to="/review">
+                           review page
+                        </NavLink>
+                    </li>
 
                 </ul>
             </div></>

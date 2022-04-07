@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import Header from './header.js';
-import Footer from './footer.js'
 import './review_index.css';
 import {db, auth} from '../firebase-config';
 import { collection, getDocs } from "firebase/firestore"; 
@@ -15,8 +13,9 @@ function PastReviews(){
         navigate("/");
     }
     const [review, setReview] = useState([]);
+    //this variable is assigned the reference to the reviews collection
     const reviewCollectionRef = collection(db, "review");
-    //this useEffect hooks contains an asynchronous function what fetches the dtata from firestore
+    //this useEffect hooks contains an asynchronous function what fetches the data from firestore
     useEffect(() => {
 
         const getReview = async () =>{

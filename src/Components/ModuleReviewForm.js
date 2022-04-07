@@ -47,7 +47,7 @@ function ModuleReviewForm(){
         <>
         <Header />
         <h1> Review page</h1>
-        <Form>
+        <Form className="module_review_form">
             <div className='review_form'>
                 <label className='reviewQ' >General description of your experience with the module</label>
                 <input type="text" className='TLDR' placeholder='General description' onChange={(event) => {

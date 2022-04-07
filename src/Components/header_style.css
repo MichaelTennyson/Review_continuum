@@ -6,7 +6,7 @@
   }
 
   .headerTitle{
-    background-color: rgb(0, 174, 255);
+    background-color: white;
     border: none;
     display: flex;
   }
@@ -14,18 +14,15 @@
   
   
   .headerItem{
-    float: center;
-    float: center;
-    display: block;
-    color: black;
-    text-decoration-color: black;
     background-color: rgb(0, 174, 255);
-    text-align: center;
-    padding: 5px 5px;
-    text-decoration: none;
-    width: flex;
-    height: 50px;
-
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
   }
 
   

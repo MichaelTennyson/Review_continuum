@@ -9,6 +9,13 @@
    align-content: center;
    display:flex;
  }
+
+ .module_review_form{
+  background-image: url('student.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+ }
  
  .TLDR{
    border: 1px solid gray;
