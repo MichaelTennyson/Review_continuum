@@ -87,7 +87,7 @@ function ModuleReviewForm(){
                 <input type="text" className='TLDR' placeholder='write about other things that you experienced in the module' onChange={(event) => {
                             setq8(event.target.value);
                         } }></input>
-                < Button onClick={uploadReview}  className='submitButton'> Submit Review</Button>
+                < Button onClick={uploadReview}  className='review_button'> Submit Review</Button>
 
             </div>
         </Form>

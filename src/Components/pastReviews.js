@@ -34,6 +34,9 @@ function PastReviews(){
      
      <Card className="Review_card">
      {""}
+     <label className='reviewQ'>Module name</label>
+     <p>{review.module_name}</p>
+
      <label className='reviewQ'>General description of your experience with the module</label>
      <p>{review.q1}</p>
 

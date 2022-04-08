@@ -3,16 +3,10 @@ import React, {useState, useEffect} from 'react';
 import {db} from '../firebase-config';
 import { collection, addDoc, getDocs } from "firebase/firestore"; 
 import { Card } from "react-bootstrap";
-import CommentCard from './commentCard';
 
-function Comment(){
-    const [comment, setComment] = useState("");
+function CommentCard(){
     const [viewedComment, setViewedComment] = useState([]);
     const commentCollectionRef = collection(db, "comment");
-
-    const uploadComment= async () => {
-        await addDoc(commentCollectionRef, {comment:comment});
-      };
 
     useEffect(() => {
         const getComment= async () =>{
@@ -23,23 +17,17 @@ function Comment(){
     }, 
     []); 
 
-
     return viewedComment && viewedComment.map((viewedComment) => {    
         //comment return html
         return(
         <>
-            <div classname="comments">
-            <h1> enter comment</h1>
-            <input type="text" className="commentSection" placeholder="enter your comment here"  onChange={(event) => {
-                                setComment(event.target.value); } }></input>
-
-            <button className='submitButton' onClick={uploadComment}> Submit</button>
-            </div>
-            <CommentCard />
+            <Card className="comment_card">
+                    <li>{viewedComment.comment}</li>
+            </Card>
         </>
         );
     });
 
- }
+}
 
- export default Comment;
+export default CommentCard;

@@ -27,7 +27,7 @@
    display:flex;
  }
  
- .submitButton{
+ .review_button{
    justify-content: center;
    background-color: blue;
    border: 1px solid blue;
@@ -66,4 +66,11 @@
    border: 1px solid blue;
    width: 100px;
    height: 100px;
+}
+
+.Review_card{
+  width: 100%;
+  position:flex;
+  background-color: blanchedalmond;
+  border: 3px solid black;
 }
