@@ -24,19 +24,20 @@ function Comment(){
 
     return comment && comment.map((comment) => {    
         //comment return html
-        <>
-        <div classname="comments">
-        <h1> enter comment</h1>
-        <textarea className="commentSection" placeholder="enter your comment here"  onChange={(event) => {
-                            setComment(event.target.value); } }></textarea>
-
-        <button className='submitButton' onClick={uploadComment}> Submit</button>
-        </div>
-        </>
         return(
+        <>
+            <div classname="comments">
+            <h1> enter comment</h1>
+            <textarea className="commentSection" placeholder="enter your comment here"  onChange={(event) => {
+                                setComment(event.target.value); } }></textarea>
+
+            <button className='submitButton' onClick={uploadComment}> Submit</button>
+            </div>
+        
             <Card className="comment_card">
                     <p>{comment.Comment}</p>
             </Card>
+        </>
         );
     });
 

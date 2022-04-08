@@ -4,9 +4,11 @@ import './review_index.css';
 import { Card, Button } from "react-bootstrap";
 import React, {useEffect, useState} from 'react';
 import { useNavigate} from "react-router-dom";
-import {realtimeDB, auth, app } from '../firebase-config';
+import {realtimeDB, auth, app} from '../firebase-config';
 import {  ref, onValue } from 'firebase/database'
 import { useAuthState } from 'react-firebase-hooks/auth'
+import 'firebase/database';
+
 
 
 
@@ -21,7 +23,7 @@ function ModulePage(){
    const [moduleList, setModuleList] = useState();
 
   useEffect(() => {
-    const moduleRef = app.database().ref('/Modules');
+    const moduleRef = app.database().ref("/Modules");
     moduleRef.on('value', (snapshot) => {
       const modules = snapshot.val();
       const moduleList= [];

@@ -9,6 +9,7 @@ import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
 require("dotenv").config();
 
+
 // firebase configuration detals
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_TOKEN,
@@ -26,7 +27,6 @@ const firebaseConfig = {
   export const realtimeDB = getDatabase(app);
   export const auth = getAuth(app);
   export const analytics = getAnalytics(app);
-  
 
 
 

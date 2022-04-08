@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './header.js';
 import Footer from './footer.js';
+import PastReviews from './pastReviews';
 import './homePage_index.css';
 import { Card, Button } from "react-bootstrap";
 import { useAuthState } from 'react-firebase-hooks/auth'
@@ -35,7 +36,9 @@ function HomePage(){
             <p className='paragraph1'> on this website, you can search for modules, review modules, view reviews comment under modules and also chat with others on the modules</p>
             <p>there is a logout button below that you can press yo logout.</p>
             <Button className="button" onClick={logout}> Sign Out </Button>
-            <p>Here are some recent reviews.</p>
+            <p className='paragraph1' >Here are some recent reviews done by users</p>
+            <PastReviews />
+
         </div>
         </Card>
         <Footer />
