@@ -1,13 +1,15 @@
 import Header from './header.js';
 import Footer from './footer.js'
+import ModuleData from './moduleData.js'
 import './review_index.css';
 import { Card, Button } from "react-bootstrap";
 import React, {useEffect, useState} from 'react';
 import { useNavigate} from "react-router-dom";
-import {realtimeDB, auth, app} from '../firebase-config';
+import {realtimeDB, auth, db} from '../firebase-config';
 import {  ref, onValue } from 'firebase/database'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import 'firebase/database';
+import { collection, getDocs } from "firebase/firestore"; 
 
 
 
@@ -19,37 +21,20 @@ function ModulePage(){
     if(!user){
         navigate("/");
     }
-   //function to get the data
-   const [moduleList, setModuleList] = useState();
+   //use effect hook used to get data  
+    return(
+      <>
+      <Header />
+      <h1>Welcome to the module page</h1>
+      <p> on this page, you will see the modules that you can currently upload reviews on</p>
 
-  useEffect(() => {
-    const moduleRef = app.database().ref("/Modules");
-    moduleRef.on('value', (snapshot) => {
-      const modules = snapshot.val();
-      const moduleList= [];
-      for (let id in modules) {
-        moduleList.push({ id, ...modules[id] });
-      }
-      setModuleList(moduleList);
-    });
-  }, []);
-  return(
-    <>
-    <Header />
-    <h1>Welcome to the module page</h1>
-    <p> on this page, you will see the modules that you can currently upload reviews on</p>
-
-    <Card className="module_card">
-        <h2>Module list</h2>
-        <div>
-          {moduleList? moduleList.map((modules, index) => <p modules={modules} key={index} />): ''}
-        </div>
-    </Card>
-    <div className="moduleselection"></div>
-    <Footer />
-    </>
-);
-
+      <Card className="module_card">
+          <ModuleData />
+      </Card>
+      <div className="moduleselection"></div>
+      <Footer />
+      </>
+    );
     
 
 }
