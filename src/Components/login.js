@@ -73,7 +73,7 @@ function Login() {
               <Form className="Login">
               <h1 className='title'>Review Continuum</h1>
                   <div className='registration'>
-                      <h1>Registration</h1>
+                      <h1>Register</h1>
                       <input
                         placeholder="enter your Email address e.g C12345678@mytudublin.ie"
                         type="email"

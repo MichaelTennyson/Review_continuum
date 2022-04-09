@@ -37,10 +37,11 @@
  }
 
  .moduleCard{
-   width:60;
+   width:60%;
    height:60%;
    display:flex;
    background-color: skyblue;
+   border: 1px solid black;
  }
 
  .modulePageTitle{

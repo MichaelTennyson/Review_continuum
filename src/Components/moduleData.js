@@ -50,7 +50,7 @@ function ModuleDate(){
             <label className='reviewQ'>Course the module is in</label>
             <p>{modules.course}</p>
           </div>
-      <div className="moduleselection"></div>
+      <Button className="module_select_button" onClick={navigate("/ModuleReviewForm")} >Clcik to review </Button>
       </>
     );
 

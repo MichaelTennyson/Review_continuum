@@ -24,7 +24,6 @@ function Comment(){
     []); 
 
 
-    return viewedComment && viewedComment.map((viewedComment) => {    
         //comment return html
         return(
         <>
@@ -38,7 +37,6 @@ function Comment(){
             <CommentCard />
         </>
         );
-    });
 
  }
 

@@ -6,10 +6,9 @@ import { Card, Button } from "react-bootstrap";
 import React, {useEffect, useState} from 'react';
 import { useNavigate} from "react-router-dom";
 import {realtimeDB, auth, db} from '../firebase-config';
-import {  ref, onValue } from 'firebase/database'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import 'firebase/database';
-import { collection, getDocs } from "firebase/firestore"; 
+
 
 
 
@@ -20,8 +19,7 @@ function ModulePage(){
     const [user] = useAuthState(auth);
     if(!user){
         navigate("/");
-    }
-   //use effect hook used to get data  
+    } 
     return(
       <>
       <Header />
@@ -31,7 +29,6 @@ function ModulePage(){
       <Card className="module_card">
           <ModuleData />
       </Card>
-      <div className="moduleselection"></div>
       <Footer />
       </>
     );
