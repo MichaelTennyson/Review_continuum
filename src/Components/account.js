@@ -33,7 +33,7 @@ function Account(){
                                     <li><a class="fa fa-dribbble" href="https://www.twitter.com/"></a> Twitter</li>
                                     <li><a class="fa fa-instagram" href="https://www.instagram.com/"> Instagram</a></li>
                                     <li><a class="fa fa-linkedin" href="https://www.linkedin.com/"> LinkedIn</a></li>
-                                    <li><a class="fa fa-google" href="https://www.linkedin.com/"> Google</a></li>
+                                    <li><a class="fa fa-google" href="https://www.google.com/"> Google</a></li>
                                 </ul>
                                 <div class="buttons"> <button class="btn btn-outline-primary px-4">Message</button> <button class="btn btn-primary px-4 ms-3">Contact</button> </div>
                             </div>

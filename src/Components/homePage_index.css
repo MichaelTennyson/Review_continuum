@@ -3,6 +3,7 @@
     font-size: large;
     text-size-adjust: large;
     font-family: 'Courier New', Courier, monospace;
+    
   
   }
 
@@ -17,7 +18,7 @@
   }
 
   .button{
-    background-color: blue;
+    background-color: rgb(178, 222, 240);
     border: 1px solid blue;
     justify-content: center;
     background-size: large;
