@@ -6,7 +6,7 @@
   }
 
   .headerTitle{
-    background-color:rgb(16, 107, 243);
+    background-color:rgb(86, 51, 214);
     border: none;
     display: flex;
   }
@@ -14,8 +14,8 @@
   
   
   .headerItem{
-    background-color:rgb(16, 107, 243);
-    color: white;
+    background-color:rgb(86, 51, 214);
+    color: black;
     float: left;
     border: none;
     outline: none;
@@ -23,14 +23,18 @@
     padding: 14px 16px;
     font-size: 17px;
     width: 25%;
+    color:black;
+    text-decoration-color: black;
   }
 
   
   
   .headerItem:hover {
-    background-color: yellow;
+    background-color: rgb(52, 7, 156);
   }
   
   .nav_link{
     align-content: center;
+    color:black;
+    background-color:black;
   }

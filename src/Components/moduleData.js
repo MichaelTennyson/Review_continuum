@@ -18,6 +18,10 @@ function ModuleDate(){
     if(!user){
         navigate("/");
     }
+
+    const Review = async () => {
+      navigate("/ModuleReviewForm");
+    };
    const [modules, setModules] = useState([]);
    const moduleCollectionRef = collection(db, "Modules");
 
@@ -48,7 +52,7 @@ function ModuleDate(){
             <p>{modules.duration}</p>
             <label className='reviewQ'>Course the module is in</label>
             <p>{modules.course}</p>
-            
+            <Button className='review_button' onClick={Review} >review module</Button>
           </div>
       
       </>
