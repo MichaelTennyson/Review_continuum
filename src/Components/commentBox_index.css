@@ -21,8 +21,9 @@
   }
 
   .comment_card{
-      width: 30px;
+      width: 50x;
       height: 30px;
       background-color:skyblue;
       text-size-adjust: flex;
+      text-size-adjust: small;
   }

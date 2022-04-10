@@ -27,6 +27,7 @@ function ModulePage(){
       <p> on this page, you will see the modules that you can currently upload reviews on</p>
 
       <Card className="module_card">
+      <h2>Modules available to be reviewed</h2>
           <ModuleData />
       </Card>
       <Footer />

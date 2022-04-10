@@ -34,8 +34,7 @@ function ModuleDate(){
   return modules && modules.map((modules) => {    
     return(
       <>
-        <h2>Modules available to be reviewed</h2>
-          <div>
+          <div className="data_div" >
             <p>Module information</p>
             <label className='reviewQ'>module code</label>
             <p>{modules.module_code}</p>
@@ -49,8 +48,9 @@ function ModuleDate(){
             <p>{modules.duration}</p>
             <label className='reviewQ'>Course the module is in</label>
             <p>{modules.course}</p>
+            <Button className="Createuserbutton" onClick={navigate("/ModuleReviewForm")}>Select this module to review</Button>
           </div>
-      <Button className="module_select_button" onClick={navigate("/ModuleReviewForm")} >Clcik to review </Button>
+      
       </>
     );
 
