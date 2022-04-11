@@ -5,6 +5,11 @@ import './account_index.css';
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '../firebase-config';
 import { useNavigate} from "react-router-dom";
+import { Button } from "react-bootstrap";
+import {
+    signOut
+  } from "firebase/auth";
+
 
 function Account(){
     //variable that takes in the current user
@@ -14,6 +19,10 @@ function Account(){
     if(!user){
         navigate("/");
       }
+      //logout method
+    const logout = async () => {
+        await signOut(auth);
+    };
       //return method
     return(
             <>
@@ -35,7 +44,7 @@ function Account(){
                                     <li><a class="fa fa-linkedin" href="https://www.linkedin.com/"> LinkedIn</a></li>
                                     <li><a class="fa fa-google" href="https://www.google.com/"> Google</a></li>
                                 </ul>
-                                <div class="buttons"> <button class="btn btn-outline-primary px-4">Message</button> <button class="btn btn-primary px-4 ms-3">Contact</button> </div>
+                                <div class="buttons">  <Button className="button" onClick={logout}> Sign Out </Button> <Button className="button">Message</Button> <Button className="button">Contact</Button> </div>
                             </div>
                         </div>
                     </div>

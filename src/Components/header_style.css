@@ -9,13 +9,15 @@
     background-color:rgb(86, 51, 214);
     border: none;
     display: flex;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
   }
 
   
   
   .headerItem{
     background-color:rgb(86, 51, 214);
-    color: black;
+    color: white;
     float: left;
     border: none;
     outline: none;
@@ -26,6 +28,8 @@
     color:black;
     text-decoration-color: black;
   }
+
+  .headerItem
 
   
   

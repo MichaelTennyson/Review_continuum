@@ -55,6 +55,7 @@ function SearchPage(){
                 <input input type="text" className='pagesearchbar' placeholder='search for a module' onChange={(event) => {
                             setSearch(event.target.value); } }
                             />
+                            <Button className='searchButton'>search</Button>   
                 <div className='searchBack'>
                     {result.map((result, index) => (
                         <a href="/review" key={index} >
@@ -65,7 +66,7 @@ function SearchPage(){
                         </a>
                     ))}
                 </div>
-                <Button className='searchButton'>search</Button>   
+                
             </div>
             
        <Footer />

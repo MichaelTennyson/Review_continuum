@@ -32,6 +32,8 @@
   .searchButton{
     margin-left: 100px;
     margin-bottom: 250px;
+    width: 100px;
+    background-color:rgb(86, 51, 214);
   }
 
   body{
