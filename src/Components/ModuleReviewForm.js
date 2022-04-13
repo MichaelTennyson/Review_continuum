@@ -16,6 +16,7 @@ function ModuleReviewForm(){
     navigate("/");
   }
 
+    const [module_Name, setModule_Name] = useState("");
     const [q1, setq1] = useState("");
     const [q2, setq2] = useState("");
     const [q3, setq3] = useState("");
@@ -29,7 +30,7 @@ function ModuleReviewForm(){
 
     // function to pass user details 
   const uploadReview = async () => {
-    await addDoc(reviewCollectionRef, {q1: q1, q2: q2, q3: q3, q4: q4, q5: q5, q6: q6, q7: q7,q8: q8});
+    await addDoc(reviewCollectionRef, {module_name: module_Name, q1: q1, q2: q2, q3: q3, q4: q4, q5: q5, q6: q6, q7: q7,q8: q8});
   };
 
   //use effect hooks
@@ -49,6 +50,10 @@ function ModuleReviewForm(){
         <h1> Review page</h1>
         <Form className="module_review_form">
             <div className='review_form'>
+            <label className='reviewQ' >Name of module you are reviewing</label>
+                <input type="text" className='TLDR' placeholder='module name - E.G. Network security programming' onChange={(event) => {
+                            setModule_Name(event.target.value);
+                        } }></input>
                 <label className='reviewQ' >General description of your experience with the module</label>
                 <input type="text" className='TLDR' placeholder='General description' onChange={(event) => {
                             setq1(event.target.value);
