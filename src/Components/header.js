@@ -26,11 +26,6 @@ function Header()
                         </NavLink>
                     </li>
                     <li className="headerItem">
-                        <NavLink className="nav-link" to="/ModuleReviewForm">
-                            Review Form
-                        </NavLink>
-                    </li>
-                    <li className="headerItem">
                         <NavLink className="nav-link" to="/searchPage">
                             Search page
                         </NavLink>
@@ -43,11 +38,6 @@ function Header()
                     <li className="headerItem">
                         <NavLink className="nav-link" to="/chat">
                            Chat
-                        </NavLink>
-                    </li>
-                    <li className="headerItem">
-                        <NavLink className="nav-link" to="/pastReviews">
-                           View past reviews
                         </NavLink>
                     </li>
                     <li className="headerItem">

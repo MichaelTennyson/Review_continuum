@@ -44,7 +44,11 @@ function Account(){
                                     <li><a class="fa fa-linkedin" href="https://www.linkedin.com/"> LinkedIn</a></li>
                                     <li><a class="fa fa-google" href="https://www.google.com/"> Google</a></li>
                                 </ul>
-                                <div class="buttons">  <Button className="button" onClick={logout}> Sign Out </Button> <Button className="button">Message</Button> <Button className="button">Contact</Button> </div>
+                                <div class="buttons">  
+                                <Button className="button" onClick={logout}> Sign Out </Button> 
+                                <Button className="button">Message</Button> 
+                                <Button className="button">Contact</Button> 
+                                </div>
                             </div>
                         </div>
                     </div>

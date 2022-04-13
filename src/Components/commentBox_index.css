@@ -8,16 +8,17 @@
 .commentSection{
     border: 1px solid black;
     background-color: white;
-    width: 200px;
-    height: 200px;
+    width:400px;
+    height: 80px;
 }
 
 .submitButton{
-    justify-content: center;
-    background-color: blue;
+    background-color:rgb(86, 51, 214);
     border: 1px solid blue;
-    width: 15px;
-    height: 10px;
+    justify-content: center;
+    background-size: large;
+    width:100px;
+    height:50px;
   }
 
   .comment_card{

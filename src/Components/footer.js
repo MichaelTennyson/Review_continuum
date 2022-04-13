@@ -20,13 +20,6 @@ function Footer(){
       <Container>
         <Row>
           <Column>
-            <Heading>About Review continuum</Heading>
-            <FooterLink href="#">Aim</FooterLink>
-            <FooterLink href="#">Vision</FooterLink>
-            <FooterLink href="#">Testimonials</FooterLink>
-            <FooterLink href="#">Future plans</FooterLink>
-          </Column>
-          <Column>
             <Heading>Services</Heading>
             <FooterLink href="/ModuleReviewForm"> upload a Review</FooterLink>
             <FooterLink href="/review">view review</FooterLink>

@@ -5,7 +5,7 @@ import './searchPage_index.css';
 import {Button} from "react-bootstrap";
 import { useNavigate} from "react-router-dom";
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { auth } from '../firebase-config';
+import { auth, db } from '../firebase-config';
 
 function SearchPage(){
     let navigate = useNavigate();
@@ -19,7 +19,7 @@ function SearchPage(){
     // the following use effect uses the fetch API that gets the details
     useEffect(() =>{
         if(search.length > 0){
-            fetch('https://review-continuum-default-rtdb.europe-west1.firebasedatabase.app/Modules').then(
+            fetch(db, "Modules").then(
                 response => response.json
             ).then(responseData => {
                 //search query set to lowercase

@@ -1,17 +1,17 @@
 .Heading{
     text-align: start;
     font-size: large;
+    font-weight: 300;
     text-size-adjust: large;
     font-family: 'Courier New', Courier, monospace;
     
-  
   }
 
   .homeCard{
     display: flex;
     width: 100%;
     height: 100%;
-    background-image: url('student.jpg');
+    background-image: url('students3.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -25,18 +25,15 @@
     width:100px;
     height:50px;
   }
-
   .HomePage{
     align-content: center;
     width: 550px;
     height: 550px;
   }
-
   .paragraph1{
     align-content: center;
     text-size-adjust: large;
   }
-
   .social-list {
     display: flex;
     list-style: none;
@@ -44,7 +41,6 @@
     padding: 0;
     z-index: 2;
 }
-
 .social-list li {
     padding: 10px;
     color: black;
