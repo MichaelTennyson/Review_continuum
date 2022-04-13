@@ -27,7 +27,7 @@ function Header()
                     </li>
                     <li className="headerItem">
                         <NavLink className="nav-link" to="/searchPage">
-                            Search page
+                            Search page (current not working)
                         </NavLink>
                     </li>
                     <li className="headerItem">
@@ -37,7 +37,7 @@ function Header()
                     </li>
                     <li className="headerItem">
                         <NavLink className="nav-link" to="/chat">
-                           Chat
+                           Chat(currently not working)
                         </NavLink>
                     </li>
                     <li className="headerItem">
