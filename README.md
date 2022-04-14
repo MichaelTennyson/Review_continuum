@@ -4,7 +4,7 @@
 
 #Final year project application built using ReactJS, React-Bootstrap and Firebase
 
- Review continuum is a module review web aplication where users can view modules, review modules and chat to each other
+#Review continuum is a module review web aplication where users can view modules, review modules and chat to each other. The main purpose of review-continuum is to provide users an enviromnet to upload detailed reviews of modules that they have done
 
 
 # Getting Started with Create React App
