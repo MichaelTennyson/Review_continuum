@@ -2,9 +2,9 @@
 
 # Created by michael tennyson / C18302166
 
-Final year project application built using ReactJS, React-Bootstrap and Firebase
+#Final year project application built using ReactJS, React-Bootstrap and Firebase
 
-# Review continuum is a module review web aplication where users can view modules, review modules and chat to each other
+ Review continuum is a module review web aplication where users can view modules, review modules and chat to each other
 
 
 # Getting Started with Create React App
