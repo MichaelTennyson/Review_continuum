@@ -8,7 +8,7 @@ import {realtimeDB, auth, db} from '../firebase-config';
 import {  ref, onValue } from 'firebase/database'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import 'firebase/database';
-import { collection, getDocs } from "firebase/firestore"; 
+import { collection, getDocs, query, where  } from "firebase/firestore"; 
 
 function ModuleDate(){
 
@@ -22,6 +22,10 @@ function ModuleDate(){
     const Review = async () => {
       navigate("/ModuleReviewForm");
     };
+
+    const Query = async () => {
+      const q = query(moduleCollectionRef, where("module_name", "==", "Algorithms"));
+    }
    const [modules, setModules] = useState([]);
    const moduleCollectionRef = collection(db, "Modules");
 
@@ -53,6 +57,7 @@ function ModuleDate(){
             <label className='reviewQ'>Course the module is in</label>
             <p>{modules.course}</p>
             <Button className='review_button' onClick={Review} >review module</Button>
+            <Button className='review_button' onClick={Query} >view reviews done on module</Button>
           </div>
       
       </>

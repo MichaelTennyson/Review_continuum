@@ -38,10 +38,11 @@ function Login() {
       console.log(user);
     } catch (error) {
       console.log(error.message);
+      alert("email and/or password is not suitable (make sure your email IS AN email and your password has MORE than 6 character!");
     }
   };
 
-  //login method
+  //login function
   const login = async () => {
     try {
       const user = await signInWithEmailAndPassword(
@@ -53,12 +54,13 @@ function Login() {
       console.log(user);
     } catch (error) {
       console.log(error.message);
+      alert("password and/or email is not valid");
     }
   };
 
 
 
-  //logout method
+  //logout function
   const logout = async () => {
     await signOut(auth);
   };
@@ -83,7 +85,7 @@ function Login() {
                         }}
                         />
                         <input
-                        placeholder=" enter your Password."
+                        placeholder=" enter your Password (must be MORE than 6 characters in it)."
                         type="password"
                         className='nameUserInput'
                         onChange={(event) => {
