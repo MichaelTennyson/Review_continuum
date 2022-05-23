@@ -20,10 +20,10 @@ function SearchPage(){
     useEffect(() =>{
         const q = query(collection(db, "Modules"), where("module_name", "==", search));
         const querySnapshot = await getDocs(q);
-        querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
-});
+        return querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            return snapshot.docs.map(doc => doc.data());
+        });
 
     }, [search ])
 
