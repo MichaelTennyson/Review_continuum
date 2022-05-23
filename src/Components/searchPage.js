@@ -5,7 +5,7 @@ import './searchPage_index.css';
 import {Button} from "react-bootstrap";
 import { useNavigate} from "react-router-dom";
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { auth, db, query, where } from '../firebase-config';
+import { auth, db, query, where, getDocs } from '../firebase-config';
 
 function SearchPage(){
     let navigate = useNavigate();
@@ -18,7 +18,12 @@ function SearchPage(){
     const [result, setResult] = useState([]);
     // the following use effect uses the fetch API that gets the details
     useEffect(() =>{
-       
+        const q = query(collection(db, "Modules"), where("module_name", "==", search));
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+});
 
     }, [search ])
 
