@@ -23,9 +23,6 @@ function ModuleDate(){
       navigate("/ModuleReviewForm");
     };
 
-    const Query = async () => {
-      const q = query(moduleCollectionRef, where("module_name", "==", "Algorithms"));
-    }
    const [modules, setModules] = useState([]);
    const moduleCollectionRef = collection(db, "Modules");
 

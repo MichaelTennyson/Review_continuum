@@ -22,8 +22,6 @@ function Comment(){
         getComment();
     }, 
     []); 
-
-
         //comment return html
         return(
         <>
