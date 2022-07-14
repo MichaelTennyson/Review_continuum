@@ -19,7 +19,7 @@ function SearchPage(){
     // the following use effect uses the fetch API that gets the details
     useEffect(() =>{
         const q = query(collection(db, "Modules"), where("module_name", "==", search));
-        const querySnapshot = await getDocs(q);
+        const querySnapshot = getDocs(q);
         return querySnapshot.forEach((doc) => {
             // doc.data() is never undefined for query doc snapshots
             return snapshot.docs.map(doc => doc.data());
@@ -38,10 +38,10 @@ function SearchPage(){
                             />
                             <Button className='searchButton'>search</Button>   
                 <div className='searchBack'>
-                    {result.map((result, index) => (
+                    {result.map((search, index) => (
                         <a href="/review" key={index} >
                            <div className='searchEntry' onClick={navigate('/modulePage')}>
-                               {result}
+                               {search}
                             </div> 
 
                         </a>
